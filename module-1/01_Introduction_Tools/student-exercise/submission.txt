@@ -1,6 +1,6 @@
 ---- VERIFYING  ---- 
 ✅ 1. ~/playground exists
-❗️ 2. ~/playground/usa does not exist
+✅ 2. ~/playground/usa exists
 ❗️ 3. ~/playground/canada does not exist
 ❗️ 4. ~/playground/usa/ohio does not exist
 ❗️ 5. ~/playground/usa/pennsylvania does not exist
@@ -22,4 +22,4 @@
 ❗️ 21. ~/playground/canada/british columbia/vancouver.txt does not exist
 ❗️ 22. ~/playground/canada/british columbia/prince-george.txt does not exist
 
-1/22 tests pass
+2/22 tests pass
