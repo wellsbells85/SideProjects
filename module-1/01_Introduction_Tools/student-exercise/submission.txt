@@ -1,12 +1,12 @@
 ---- VERIFYING  ---- 
 ✅ 1. ~/playground exists
-❗️ 2. ~/playground/usa does not exist
-❗️ 3. ~/playground/canada does not exist
-❗️ 4. ~/playground/usa/ohio does not exist
-❗️ 5. ~/playground/usa/pennsylvania does not exist
-❗️ 6. ~/playground/usa/michigan does not exist
-❗️ 7. ~/playground/canada/quebec does not exist
-❗️ 8. ~/playground/canada/british columbia does not exist
+✅ 2. ~/playground/usa exists
+✅ 3. ~/playground/canada exists
+✅ 4. ~/playground/usa/ohio exists
+✅ 5. ~/playground/usa/pennsylvania exists
+✅ 6. ~/playground/usa/michigan exists
+✅ 7. ~/playground/canada/quebec exists
+✅ 8. ~/playground/canada/british columbia exists
 ❗️ 9. ~/playground/usa/ohio/cuyahoga does not exist
 ❗️ 10. ~/playground/usa/ohio/hamilton does not exist
 ❗️ 11. ~/playground/usa/ohio/franklin does not exist
@@ -22,4 +22,4 @@
 ❗️ 21. ~/playground/canada/british columbia/vancouver.txt does not exist
 ❗️ 22. ~/playground/canada/british columbia/prince-george.txt does not exist
 
-1/22 tests pass
+8/22 tests pass
