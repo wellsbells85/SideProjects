@@ -245,66 +245,107 @@ public class Exercises {
         26. Mrs. Hilt bought 6 hot dogs. Each hot dog cost 50 cents. How much
         money did she pay for all of the hot dogs?
         */
+		int numberOfHotDogs = 6;
+		float costPerHotDogInDollars = .50F;
+		float costOfHotDogsTotalInDollars = numberOfHotDogs * costPerHotDogInDollars;
+		System.out.println(costOfHotDogsTotalInDollars);
 		
 
         /*
         27. Mrs. Hilt has 50 cents. A pencil costs 7 cents. How many pencils can
         she buy with the money she has?
         */
-	
+		int totalCashMrsHiltInCents = 50;
+		int costPerPencilInCents = 7;
+		int numberOfPencilsAfforded = totalCashMrsHiltInCents / costPerPencilInCents;
+		System.out.println(numberOfPencilsAfforded);
 
         /*
         28. Mrs. Hilt saw 33 butterflies. Some of the butterflies were red and others
         were orange. If 20 of the butterflies were orange, how many of them
         were red?
         */
+		int numberOfButterfliesSpotted = 33;
+		int numberOfOrangeButterflies = 20;
+		int numberOfRedButterflies = numberOfButterfliesSpotted - numberOfOrangeButterflies;
+		System.out.println(numberOfRedButterflies);
 	
         /*
         29. Kate gave the clerk $1.00. Her candy cost 54 cents. How much change
         should Kate get back?
         */
-	
+		double amountKatePaidInDollars = 1.00;
+		double amountKateOwedInDollars = .54;
+		double amountChangeToKateInDollars = amountKatePaidInDollars - amountKateOwedInDollars;
+		System.out.println(amountChangeToKateInDollars);
 
         /*
         30. Mark has 13 trees in his backyard. If he plants 12 more, how many trees
         will he have?
         */
+		int numberOfTreesInBackyard = 13;
+		int numberOfTreesPlanted = 12;
+		numberOfTreesInBackyard += numberOfTreesPlanted;
+		System.out.println(numberOfTreesInBackyard);
 
 
         /*
         31. Joy will see her grandma in two days. How many hours until she sees
         her?
         */
+		int numberOfDays = 2;
+		int numberOfHoursPerDay = 24;
+		int numberOfHoursRemaining = numberOfDays * numberOfHoursPerDay;
+		System.out.println(numberOfHoursRemaining);
 	
 
         /*
         32. Kim has 4 cousins. She wants to give each one 5 pieces of gum. How
         much gum will she need?
         */
+		int numberOfCousins = 4;
+		int piecesOfGumPerCousin = 5;
+		int totalPiecesOfGum = numberOfCousins * piecesOfGumPerCousin;
+		System.out.println(totalPiecesOfGum);
 
 		
         /*
         33. Dan has $3.00. He bought a candy bar for $1.00. How much money is
         left?
         */
+		int amountDanHasInDollars = 3;
+		int costOfCandyBarInDollars = 1;
+		amountDanHasInDollars -= costOfCandyBarInDollars;
+		System.out.println(amountDanHasInDollars);
 
 		
         /*
         34. 5 boats are in the lake. Each boat has 3 people. How many people are
         on boats in the lake?
         */
+		int numberOfBoats = 5;
+		int numberOfPeoplePerBoat = 3;
+		int numberOfPeopleTotal = numberOfBoats * numberOfPeoplePerBoat;
+		System.out.println(numberOfPeopleTotal);
 
 
         /*
         35. Ellen had 380 legos, but she lost 57 of them. How many legos does she
         have now?
         */
-
+		int numberOfLegosEllenHas = 380;
+		int numberOfLegosLost = 57;
+		numberOfLegosEllenHas -= numberOfLegosLost;
+		System.out.println(numberOfLegosEllenHas);
 
         /*
         36. Arthur baked 35 muffins. How many more muffins does Arthur have to
         bake to have 83 muffins?
         */
+		int numberOfMuffinsNeeded = 83;
+		int numberOfMuffinsFinished = 35;
+		numberOfMuffinsNeeded -= numberOfMuffinsFinished;
+		System.out.println(numberOfMuffinsNeeded);
 
 
         /*
