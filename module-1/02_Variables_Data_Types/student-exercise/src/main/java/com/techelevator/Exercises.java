@@ -66,6 +66,7 @@ public class Exercises {
 		int beaversWorkingOnHome = 2;
 		int beaversWentForASwim = 1;
 		int beaversStillWorkingOnHome = beaversWorkingOnHome - beaversWentForASwim;
+		System.out.println(beaversStillWorkingOnHome);
 
         /*
         8. 2 toucans are sitting on a tree limb. 1 more toucan joins them. How
@@ -89,10 +90,10 @@ public class Exercises {
         10. Mrs. Hilt found a quarter, 1 dime, and 2 nickels. How much money did
         she find?
         */
-		float numberOfQuarters = 1.0;
-		float numberOfDimes = 1.0;
-		float numberOfNickels = 2.0;
-		float totalAmountOfMoneyInDollars = numberOfQuarters * .25 + numberOfDimes * .10 + numberOfNickels * .5;
+		float numberOfQuarters = 1.0F;
+		float numberOfDimes = 1.0F;
+		float numberOfNickels = 2.0F;
+		float totalAmountOfMoneyInDollars = numberOfQuarters * .25F + numberOfDimes * .10F + numberOfNickels * .05F;
 		System.out.println(totalAmountOfMoneyInDollars);
 		
 		/*
@@ -187,15 +188,15 @@ public class Exercises {
         20. A bee has 6 legs. How many legs do 8 bees have?
         */
 		int numberOfLegsOnBee = 6;
-		int numberOfBees = 8;
-		int numberOfLegsTotal = numberOfLegsOnBee * numberOfBees;
+		int numberOfBeesTotal = 8;
+		int numberOfLegsTotal = numberOfLegsOnBee * numberOfBeesTotal;
 		System.out.println(numberOfLegsTotal);
 
         /*
         21. Mrs. Hilt bought an ice cream cone for 99 cents. How much would 2 ice
         cream cones cost?
         */
-		float costIceCreamConeInDollars = .99;
+		float costIceCreamConeInDollars = .99F;
 		int numberOfIceCreamCones = 2;
 		float costInDollarsTotal = costIceCreamConeInDollars * numberOfIceCreamCones;
 		System.out.println(costInDollarsTotal);
@@ -205,183 +206,140 @@ public class Exercises {
         rocks to complete the border. She has 64 rocks. How many more rocks
         does she need to complete the border?
         */
-		int numberOf
-		int numberOf
-		int numberOf
+		int numberOfRocksMrsHiltNeeds = 125;
+		int numberOfRocksMrsHiltHas = 64;
+		numberOfRocksMrsHiltNeeds -= numberOfRocksMrsHiltHas;
+		System.out.println(numberOfRocksMrsHiltNeeds);
 
         /*
         23. Mrs. Hilt had 38 marbles. She lost 15 of them. How many marbles does
         she have left?
         */
-		int numberOf
-		int numberOf
-		int numberOf
+		int numberOfMarblesMrsHiltHas = 38;
+		int numberOfMarblesMrsHiltLost = 15;
+		numberOfMarblesMrsHiltHas -= numberOfMarblesMrsHiltLost;
+		System.out.println(numberOfMarblesMrsHiltHas);
 
         /*
         24. Mrs. Hilt and her sister drove to a concert 78 miles away. They drove 32
         miles and then stopped for gas. How many miles did they have left to drive?
         */
-		int numberOf
-		int numberOf
-		int numberOf
+		
 		
         /*
         25. Mrs. Hilt spent 1 hour and 30 minutes shoveling snow on Saturday
         morning and 45 minutes shoveling snow on Saturday afternoon. How
         much total time did she spend shoveling snow?
         */
-		int numberOf
-		int numberOf
-		int numberOf
+	
 
         /*
         26. Mrs. Hilt bought 6 hot dogs. Each hot dog cost 50 cents. How much
         money did she pay for all of the hot dogs?
         */
-		int numberOf
-		int numberOf
-		int numberOf
+		
 
         /*
         27. Mrs. Hilt has 50 cents. A pencil costs 7 cents. How many pencils can
         she buy with the money she has?
         */
-		int numberOf
-		int numberOf
-		int numberOf
+	
 
         /*
         28. Mrs. Hilt saw 33 butterflies. Some of the butterflies were red and others
         were orange. If 20 of the butterflies were orange, how many of them
         were red?
         */
-		int numberOf
-		int numberOf
-		int numberOf
-
+	
         /*
         29. Kate gave the clerk $1.00. Her candy cost 54 cents. How much change
         should Kate get back?
         */
-		int numberOf
-		int numberOf
-		int numberOf
+	
 
         /*
         30. Mark has 13 trees in his backyard. If he plants 12 more, how many trees
         will he have?
         */
-		int numberOf
-		int numberOf
-		int numberOf
+
 
         /*
         31. Joy will see her grandma in two days. How many hours until she sees
         her?
         */
-		int numberOf
-		int numberOf
-		int numberOf
+	
 
         /*
         32. Kim has 4 cousins. She wants to give each one 5 pieces of gum. How
         much gum will she need?
         */
-		int numberOf
-		int numberOf
-		int numberOf
+
 		
         /*
         33. Dan has $3.00. He bought a candy bar for $1.00. How much money is
         left?
         */
-		int numberOf
-		int numberOf
-		int numberOf
+
 		
         /*
         34. 5 boats are in the lake. Each boat has 3 people. How many people are
         on boats in the lake?
         */
-		int numberOf
-		int numberOf
-		int numberOf
+
 
         /*
         35. Ellen had 380 legos, but she lost 57 of them. How many legos does she
         have now?
         */
-		int numberOf
-		int numberOf
-		int numberOf
+
 
         /*
         36. Arthur baked 35 muffins. How many more muffins does Arthur have to
         bake to have 83 muffins?
         */
-		int numberOf
-		int numberOf
-		int numberOf
+
 
         /*
         37. Willy has 1400 crayons. Lucy has 290 crayons. How many more
         crayons does Willy have then Lucy?
         */
-		int numberOf
-		int numberOf
-		int numberOf
+
 
         /*
         38. There are 10 stickers on a page. If you have 22 pages of stickers, how
         many stickers do you have?
         */
-		int numberOf
-		int numberOf
-		int numberOf
+
 
         /*
         39. There are 96 cupcakes for 8 children to share. How much will each
         person get if they share the cupcakes equally?
         */
-		int numberOf
-		int numberOf
-		int numberOf
 
         /*
         40. She made 47 gingerbread cookies which she will distribute equally in
         tiny glass jars. If each jar is to contain six cookies each, how many
         cookies will not be placed in a jar?
         */
-		int numberOf
-		int numberOf
-		int numberOf
 
         /*
         41. She also prepared 59 croissants which she plans to give to her 8
         neighbors. If each neighbor received and equal number of croissants,
         how many will be left with Marian?
         */
-		int numberOf
-		int numberOf
-		int numberOf
 
         /*
         42. Marian also baked oatmeal cookies for her classmates. If she can
         place 12 cookies on a tray at a time, how many trays will she need to
         prepare 276 oatmeal cookies at a time?
         */
-		int numberOf
-		int numberOf
-		int numberOf
 
         /*
         43. Marian’s friends were coming over that afternoon so she made 480
         bite-sized pretzels. If one serving is equal to 12 pretzels, how many
         servings of bite-sized pretzels was Marian able to prepare?
         */
-		int numberOf
-		int numberOf
-		int numberOf
+
 
         /*
         44. Lastly, she baked 53 lemon cupcakes for the children living in the city
@@ -389,35 +347,26 @@ public class Exercises {
         boxes with 3 lemon cupcakes each were given away?
         */
 
-		int numberOf
-		int numberOf
-		int numberOf
+	
         /*
         45. Susie's mom prepared 74 carrot sticks for breakfast. If the carrots
         were served equally to 12 people, how many carrot sticks were left
         uneaten?
         */
-		int numberOf
-		int numberOf
-		int numberOf
+	
 
         /*
         46. Susie and her sister gathered all 98 of their teddy bears and placed
         them on the shelves in their bedroom. If every shelf can carry a
         maximum of 7 teddy bears, how many shelves will be filled?
         */
-		int numberOf
-		int numberOf
-		int numberOf
 
         /*
         47. Susie’s mother collected all family pictures and wanted to place all of
         them in an album. If an album can contain 20 pictures, how many
         albums will she need if there are 480 pictures?
         */
-		int numberOf
-		int numberOf
-		int numberOf
+	
 
         /*
         48. Joe, Susie’s brother, collected all 94 trading cards scattered in his
@@ -425,26 +374,20 @@ public class Exercises {
         cards, how many boxes were filled and how many cards are there in
         the unfilled box?
         */
-		int numberOf
-		int numberOf
-		int numberOf
+	
 
         /*
         49. Susie’s father repaired the bookshelves in the reading room. If he has
         210 books to be distributed equally on the 10 shelves he repaired,
         how many books will each shelf contain?
         */
-		int numberOf
-		int numberOf
-		int numberOf
+	
 
         /*
         50. Cristina baked 17 croissants. If she planned to serve this equally to
         her seven guests, how many will each have?
         */
-		int numberOf
-		int numberOf
-		int numberOf
+	
 
         /*
             CHALLENGE PROBLEMS
