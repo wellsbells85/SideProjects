@@ -151,48 +151,54 @@ public class Exercises {
         marbles does he have now?
         */
 
-		int numberOf
-		int numberOf
-		int numberOf
+		int numberOfMarblesInCollection = 16;
+		int numberOfMarblesLost = 7;
+		numberOfMarblesInCollection -= numberOfMarblesLost;
+		System.out.println(numberOfMarblesInCollection);
 		
         /*
         17. Megan has 19 seashells. How many more seashells does she need to
         find to have 25 seashells in her collection?
         */
-		int numberOf
-		int numberOf
-		int numberOf
+		int numberOfSeashellsMeganHas = 19;
+		int numberOfSeashellsMeganWants = 25;
+		int numberOfSeashellsMeganNeeds = numberOfSeashellsMeganWants - numberOfSeashellsMeganHas;
+		System.out.println(numberOfSeashellsMeganNeeds);
 
         /*
         18. Brad has 17 balloons. 8 balloons are red and the rest are green. How
         many green balloons does Brad have?
         */
-		int numberOf
-		int numberOf
-		int numberOf
+		int numberOfBalloonsTotal = 17;
+		int numberOfRedBalloons = 8;
+		int numberOfGreenBalloons = numberOfBalloonsTotal - numberOfRedBalloons;
+		System.out.println(numberOfGreenBalloons);
 
         /*
         19. There are 38 books on the shelf. Marta put 10 more books on the shelf.
         How many books are on the shelf now?
         */
-		int numberOf
-		int numberOf
-		int numberOf
+		int numberOfBooksOnShelf = 38;
+		int numberOfBooksMartaAddsToShelf = 10;
+		numberOfBooksOnShelf += numberOfBooksMartaAddsToShelf;
+		System.out.println(numberOfBooksOnShelf);
 
         /*
         20. A bee has 6 legs. How many legs do 8 bees have?
         */
-		int numberOf
-		int numberOf
-		int numberOf
+		int numberOfLegsOnBee = 6;
+		int numberOfBees = 8;
+		int numberOfLegsTotal = numberOfLegsOnBee * numberOfBees;
+		System.out.println(numberOfLegsTotal);
 
         /*
         21. Mrs. Hilt bought an ice cream cone for 99 cents. How much would 2 ice
         cream cones cost?
         */
-		int numberOf
-		int numberOf
-		int numberOf
+		float costIceCreamConeInDollars = .99;
+		int numberOfIceCreamCones = 2;
+		float costInDollarsTotal = costIceCreamConeInDollars * numberOfIceCreamCones;
+		System.out.println(costInDollarsTotal);
 
         /*
         22. Mrs. Hilt wants to make a border around her garden. She needs 125
