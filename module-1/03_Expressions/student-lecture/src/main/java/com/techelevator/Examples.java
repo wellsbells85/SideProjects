@@ -15,6 +15,7 @@ public class Examples {
 		 ==  Equal to
 		 !=  Not equal to
 		*/
+		
 		result = (2 == 2);
 		System.out.println("2 == 2 : " + result);
 		result = (2 == 3);
@@ -110,7 +111,7 @@ public class Examples {
 
 		int x = 3;
 		int y = 0;
-		// result = (y > 0) && (x / y) > 2;  // causes a divide by zero exception to be thrown
+		//result = (y >= 0) && (x / y) > 2;  // causes a divide by zero exception to be thrown
 		result = (y > 0) && (x / y) > 2;
 		System.out.println(result);
 
@@ -181,9 +182,10 @@ public class Examples {
 		int secondVariable = 7; // this is allowed because there is no variable named secondVariable in this scope
 
 		boolean burnItDown = shouldBurnDownTheBuilding(14, 20);
+		System.out.println(burnItDown);
 	}
 
-	static boolean shouldBurnDownTheBuilding(int numberOfEmployees, int piecesOfCake) {
+	public static boolean shouldBurnDownTheBuilding(int numberOfEmployees, int piecesOfCake) {
 		if (numberOfEmployees > piecesOfCake) {
 			return true;
 		} else {
