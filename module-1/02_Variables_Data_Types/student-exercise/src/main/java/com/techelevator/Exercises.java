@@ -352,50 +352,79 @@ public class Exercises {
         37. Willy has 1400 crayons. Lucy has 290 crayons. How many more
         crayons does Willy have then Lucy?
         */
-
+		int numberOfCrayonsForWilly = 1400;
+		int numberOfCrayonsForLucy = 290;
+		int differenceInNumberOfCrayons = numberOfCrayonsForWilly - numberOfCrayonsForLucy;
+		System.out.println(differenceInNumberOfCrayons);
 
         /*
         38. There are 10 stickers on a page. If you have 22 pages of stickers, how
         many stickers do you have?
         */
-
+		int stickersPerPage = 10;
+		int numberOfPages = 22;
+		int numberOfStickersTotal = stickersPerPage * numberOfPages;
+		System.out.println(numberOfStickersTotal);
 
         /*
         39. There are 96 cupcakes for 8 children to share. How much will each
         person get if they share the cupcakes equally?
         */
-
+		float totalNumberOfCupcakes = 96F;
+		int numberOfChildren = 8;
+		float numberOfCupcakesPerChild = totalNumberOfCupcakes / numberOfChildren;
+		System.out.println(numberOfCupcakesPerChild);
+		
         /*
         40. She made 47 gingerbread cookies which she will distribute equally in
         tiny glass jars. If each jar is to contain six cookies each, how many
         cookies will not be placed in a jar?
         */
+		int numberOfCookiesTotal = 47;
+		int numberOfCookiesPerJar = 6;
+		int numberOfCookiesLeftover = numberOfCookiesTotal % numberOfCookiesPerJar;
+		System.out.println(numberOfCookiesLeftover);
 
         /*
         41. She also prepared 59 croissants which she plans to give to her 8
         neighbors. If each neighbor received and equal number of croissants,
         how many will be left with Marian?
         */
+		int numberOfCroissantsTotal = 59;
+		int numberOfNeighbors = 8;
+		int numberOfCroissantsLeftover = numberOfCroissantsTotal % numberOfNeighbors;
+		System.out.println(numberOfCroissantsLeftover);
 
         /*
         42. Marian also baked oatmeal cookies for her classmates. If she can
         place 12 cookies on a tray at a time, how many trays will she need to
         prepare 276 oatmeal cookies at a time?
         */
+		int numberOfOatCookiesTotal = 276;
+		int numberOfOatCookiesPerTray = 12;
+		int numberOfTraysNeeded = numberOfOatCookiesTotal / numberOfOatCookiesPerTray;
+		System.out.println(numberOfTraysNeeded);
 
         /*
         43. Marian’s friends were coming over that afternoon so she made 480
         bite-sized pretzels. If one serving is equal to 12 pretzels, how many
         servings of bite-sized pretzels was Marian able to prepare?
         */
-
-
+		int numberOfPretzelsTotal = 480;
+		int numberOfPretzelsPerServing = 12;
+		float numberOfServingsMade = (float)numberOfPretzelsTotal / (float)numberOfPretzelsPerServing;
+		System.out.println(numberOfServingsMade);
+		
         /*
         44. Lastly, she baked 53 lemon cupcakes for the children living in the city
         orphanage. If two lemon cupcakes were left at home, how many
         boxes with 3 lemon cupcakes each were given away?
         */
-
+		int numberOfLemonCupcakesBaked = 53;
+		int numberOfLemonCupcakesLeftBehind = 2;
+		int numberOfLemonCupcakesPerBox = 3;
+		int numberOfBoxesGifted = (numberOfLemonCupcakesBaked - numberOfLemonCupcakesLeftBehind) / numberOfLemonCupcakesPerBox;
+		System.out.println(numberOfBoxesGifted);
 	
         /*
         45. Susie's mom prepared 74 carrot sticks for breakfast. If the carrots
