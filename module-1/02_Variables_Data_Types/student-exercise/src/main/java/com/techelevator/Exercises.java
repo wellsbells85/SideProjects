@@ -224,6 +224,10 @@ public class Exercises {
         24. Mrs. Hilt and her sister drove to a concert 78 miles away. They drove 32
         miles and then stopped for gas. How many miles did they have left to drive?
         */
+		int totalMilesDrivenToConcert = 78;
+		int totalMilesDrivenOnReturn = 32;
+		int totalMilesRemainingToHome = totalMilesDrivenToConcert - totalMilesDrivenOnReturn;
+		System.out.println(totalMilesRemainingToHome);
 		
 		
         /*
@@ -231,7 +235,11 @@ public class Exercises {
         morning and 45 minutes shoveling snow on Saturday afternoon. How
         much total time did she spend shoveling snow?
         */
-	
+		int minutesSpentShovelingMorning = 90;
+		int minutesSpentShovelingAfternoon = 45;
+		int hoursSpentShovelingSaturday = (minutesSpentShovelingMorning + minutesSpentShovelingAfternoon) / 60;
+		int minutesSpentShovelingSaturday = (minutesSpentShovelingMorning + minutesSpentShovelingAfternoon) % 60;
+		System.out.println( hoursSpentShovelingSaturday + " hrs " + minutesSpentShovelingSaturday + " mins");
 
         /*
         26. Mrs. Hilt bought 6 hot dogs. Each hot dog cost 50 cents. How much
