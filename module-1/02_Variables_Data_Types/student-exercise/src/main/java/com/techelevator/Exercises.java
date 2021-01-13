@@ -497,6 +497,17 @@ public class Exercises {
         Hint: Calculate the hourly rate for each painter, combine them, and then divide the total walls in feet by the combined hourly rate of the painters.
         Challenge: How many days will it take the pair to paint 623 rooms assuming they work 8 hours a day?.
         */
+		double squareFootageOfRoom = 12 * 14;
+		double hourlyRateOfPaintingBill = squareFootageOfRoom / 2.15;
+		double hourlyRateOfPaintingJill = squareFootageOfRoom / 1.90;
+		double hourlyRateOfPaintingCombined = hourlyRateOfPaintingBill + hourlyRateOfPaintingJill;
+		double timeToPaintFiveRooms = 5 * squareFootageOfRoom / hourlyRateOfPaintingCombined;
+		System.out.println("Time to paint five rooms: " + timeToPaintFiveRooms + " hrs");
+		double numberOfRooms = 623;
+		double hoursInWorkday = 8;
+		double daysToPaintMultipleRooms = ((numberOfRooms * squareFootageOfRoom) / hourlyRateOfPaintingCombined) / hoursInWorkday;
+		System.out.println("Time to paint 623 rooms: " + daysToPaintMultipleRooms + " days");
+		
 
         /*
         Create and assign variables to hold your first name, last name, and middle initial. Using concatenation,
@@ -505,6 +516,11 @@ public class Exercises {
         with a period.
         Example: "Hopper, Grace B."
         */
+		String nameFirst = "Nicholas";
+		String nameMiddleInitial = "B";
+		String nameLast = "Weller";
+		String nameFull = nameLast + ", " + nameFirst + " " + nameMiddleInitial + ".";
+		System.out.println(nameFull);
 
         /*
         The distance between New York and Chicago is 800 miles, and the train has already travelled 537 miles.
@@ -512,6 +528,10 @@ public class Exercises {
         Hint: The percent completed is the miles already travelled divided by the total miles.
         Challenge: Display as an integer value between 0 and 100 using casts.
         */
+		double distanceTotalInMiles = 800;
+		double distanceTraveledInMiles = 537;
+		double percentageDistanceCompleted = distanceTraveledInMiles / distanceTotalInMiles * 100;
+		System.out.println("You have completed " + (int)percentageDistanceCompleted + "% of the trip.");
 
 
 	}
