@@ -431,20 +431,30 @@ public class Exercises {
         were served equally to 12 people, how many carrot sticks were left
         uneaten?
         */
+		int numberOfCarrotSticksPrepared = 74;
+		int numberOfCarrotEaters = 12;
+		int numberOfCarrotsLeftover = numberOfCarrotSticksPrepared % numberOfCarrotEaters;
+		System.out.println(numberOfCarrotsLeftover);
 	
-
         /*
         46. Susie and her sister gathered all 98 of their teddy bears and placed
         them on the shelves in their bedroom. If every shelf can carry a
         maximum of 7 teddy bears, how many shelves will be filled?
         */
+		int numberOfTeddyBearsTotal = 98;
+		int numberOfBearsPerShelf = 7;
+		int numberOfFilledShelves = numberOfTeddyBearsTotal / numberOfBearsPerShelf;
+		System.out.println(numberOfFilledShelves);
 
         /*
         47. Susie’s mother collected all family pictures and wanted to place all of
         them in an album. If an album can contain 20 pictures, how many
         albums will she need if there are 480 pictures?
         */
-	
+		int numberOfPicturesTotal = 480;
+		int numberOfPicturesPerAlbum = 20;
+		int numberOfAlbumsNeeded = numberOfPicturesTotal / numberOfPicturesPerAlbum;
+		System.out.println(numberOfAlbumsNeeded);
 
         /*
         48. Joe, Susie’s brother, collected all 94 trading cards scattered in his
@@ -452,20 +462,30 @@ public class Exercises {
         cards, how many boxes were filled and how many cards are there in
         the unfilled box?
         */
-	
+		int numberOfTradingCardsTotal = 94;
+		int numberOfCardsPerBox = 8;
+		int numberOfFilledBoxes = numberOfTradingCardsTotal / numberOfCardsPerBox;
+		int numberOfCardsInFinalBox = numberOfTradingCardsTotal % numberOfCardsPerBox;
+		System.out.println(numberOfFilledBoxes + "  " + numberOfCardsInFinalBox);
 
         /*
         49. Susie’s father repaired the bookshelves in the reading room. If he has
         210 books to be distributed equally on the 10 shelves he repaired,
         how many books will each shelf contain?
         */
-	
+		int numberOfBooksTotal = 210;
+		int numberOfShelves = 10;
+		int numberOfBooksPerShelf = numberOfBooksTotal / numberOfShelves;
+		System.out.println(numberOfBooksPerShelf);
 
         /*
         50. Cristina baked 17 croissants. If she planned to serve this equally to
         her seven guests, how many will each have?
         */
-	
+		int numberOfCroissantTotal = 17;
+		int numberOfGuests = 7;
+		int numberOfCroissantPerGuest = numberOfCroissantTotal / numberOfGuests;
+		System.out.println(numberOfCroissantPerGuest);
 
         /*
             CHALLENGE PROBLEMS
