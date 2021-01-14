@@ -251,9 +251,7 @@ public class Exercises {
 	 squirrelPlay(95, true) → true
 	 */
 	public boolean squirrelPlay(int temp, boolean isSummer) {
-		if ( temp >= 60 && temp <= 100 && ( isSummer || temp <= 90 ) ) {
-				return true;
-		} return false;
+		return ( temp >= 60 && temp <= 100 && ( isSummer || temp <= 90 ) ) ? true : false;
 	}
 
     /*
