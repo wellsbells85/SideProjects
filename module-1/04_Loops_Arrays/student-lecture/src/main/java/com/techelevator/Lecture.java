@@ -45,15 +45,15 @@ public class Lecture {
        return it? There are a couple of different ways of doing this, what can you come up with?
     */
     public int returnVariableFromBlock(int number) {
-    	int resultReturn;
+    
         { // A new block with scoped variables
 
             int result = number * 5;
-            resultReturn = result;
+            return result; // We want to return result here. How?
 
         } // the result variable disappears here
 
-        return resultReturn; // We want to return result here. How?
+       
     }
 
     /*
@@ -114,10 +114,10 @@ public class Lecture {
     public boolean returnCorrectCount() {
         int[] arrayToLoopThrough = { 4, 23, 9 };
 
-        int counter = 1;
+        int counter = 0;
 
         //     Start;       Keep going while         Increment by one;
-        for (int i = 1; i < arrayToLoopThrough.length; i++) {
+        for (int i = 0; i < arrayToLoopThrough.length; i++) {
             counter++;
         }
 
