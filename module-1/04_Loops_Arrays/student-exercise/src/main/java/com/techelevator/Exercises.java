@@ -65,7 +65,11 @@ public class Exercises {
 	 rotateLeft3([7, 0, 0]) → [0, 0, 7]
 	 */
 	public int[] rotateLeft3(int[] nums) {
-		return new int[] {};
+		int[] arrayRotated = new int[3];
+		arrayRotated[0] = nums[1];
+		arrayRotated[1] = nums[2];
+		arrayRotated[2] = nums[0];
+		return arrayRotated;
 	}
 
 	/*
@@ -76,7 +80,11 @@ public class Exercises {
 	 reverse3([7, 0, 0]) → [0, 0, 7]
 	 */
 	public int[] reverse3(int[] nums) {
-		return new int[] {};
+		int[] arrayReversed = new int[3];
+		arrayReversed[0] = nums[2];
+		arrayReversed[1] = nums[1];
+		arrayReversed[2] = nums[0];
+		return arrayReversed;
 	}
 
 	/*
@@ -87,7 +95,13 @@ public class Exercises {
 	 maxEnd3([2, 11, 3]) → [3, 3, 3]
 	 */
 	public int[] maxEnd3(int[] nums) {
-		return new int[] {};
+		int arrayLarge = nums[2];
+		if(nums[0] > nums[2]) {
+			arrayLarge = nums[0];
+		}
+		for( int i=0; i<nums.length; i++) {
+			nums[i] = arrayLarge;
+		} return nums;
 	}
 
 	/*
@@ -113,7 +127,10 @@ public class Exercises {
 	 middleWay([5, 2, 9], [1, 4, 5]) → [2, 4]
 	 */
 	public int[] middleWay(int[] a, int[] b) {
-		return new int[] {};
+		int[] c = new int[2];
+		c[0] = a[1];
+		c[1] = b[1];
+		return c;
 	}
 
 	/*
