@@ -46,7 +46,7 @@ public class Lecture {
 
 		/* Double equals will compare to see if the two variables, hello1 and
 		 * hello2 point to the same object in memory. Are they the same object? */
-		if (hello1 == hello2) {
+		if (hello1.equals(hello2) {
 			System.out.println("They are equal!");
 		} else {
 			System.out.println(hello1 + " is not equal to " + hello2);
