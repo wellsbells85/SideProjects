@@ -202,7 +202,17 @@ public class Exercises {
 	 *
 	 */
 	public Map<Integer, Integer> integerCount(int[] ints) {
-		return null;
+		
+		Map<Integer, Integer> result = new HashMap<>();
+		
+		for( int i = 0; i < ints.length; i++ ) {
+			Integer counter = 1;
+			if( result.containsKey(ints[i]) ) {
+				counter = result.get(ints[i]) + 1;
+			}
+			result.put(ints[i], counter);
+		}
+		return result;
 	}
 
 	/*
@@ -215,7 +225,19 @@ public class Exercises {
 	 *
 	 */
 	public Map<String, Boolean> wordMultiple(String[] words) {
-		return null;
+		
+		
+		Map<String, Boolean> result = new HashMap<>();
+		
+		for( int i = 0; i < words.length; i++ ) {
+			
+			Boolean multiple = false;
+			if( result.containsKey(words[i]) ) {
+				multiple = true;
+			} 
+			result.put(words[i], multiple);
+		}
+		return result;
 	}
 
 	/*
@@ -228,9 +250,17 @@ public class Exercises {
 	 * 	 → {"SKU1": 100, "SKU2": 64, "SKU3": 44, "SKU4": 5}
 	 *
 	 */
-	public Map<String, Integer> consolidateInventory(Map<String, Integer> mainWarehouse,
-			Map<String, Integer> remoteWarehouse) {
-		return null;
+	public Map<String, Integer> consolidateInventory(Map<String, Integer> mainWarehouse, Map<String, Integer> remoteWarehouse) {
+		
+		for(String key : remoteWarehouse.keySet() ) {
+			if( mainWarehouse.containsKey(key) ) {
+				mainWarehouse.put( key, (mainWarehouse.get(key) + remoteWarehouse.get(key) ) );
+			} else {
+				mainWarehouse.put( key , remoteWarehouse.get(key) );
+			}
+		}
+			
+		return mainWarehouse;
 	}
 
 	/*
@@ -249,7 +279,32 @@ public class Exercises {
 	 *
 	 */
 	public Map<String, Integer> last2Revisited(String[] words) {
-		return null;
+		
+		Map<String, Integer> result = new HashMap<>();
+		
+		for( String word : words ) {
+			
+			Integer counter = 0;
+			String lastTwoLetters = word.substring(word.length() - 2, word.length() );
+			
+			for( int i = 0; i < word.length() - 2; i++ ) {
+				
+				if( word.substring(i, i + 2 ).equals(lastTwoLetters) ) {
+					counter++;
+				}		
+			} result.put(word, counter);
+		} return result;	
 	}
 
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 }
