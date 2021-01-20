@@ -114,7 +114,12 @@ public class Exercises {
 	 *
 	 */
 	public Map<String, Integer> robPeterToPayPaul(Map<String, Integer> peterPaul) {
-		return null;
+		if( peterPaul.get("Paul") < 1000 ) {
+			Integer halfMoney = peterPaul.get("Peter") / 2;
+			peterPaul.put("Peter", peterPaul.get("Peter") - halfMoney );
+			peterPaul.put("Paul", peterPaul.get("Paul") + halfMoney );
+		}
+		return peterPaul;
 	}
 
 	/*
@@ -127,7 +132,13 @@ public class Exercises {
 	 *
 	 */
 	public Map<String, Integer> peterPaulPartnership(Map<String, Integer> peterPaul) {
-		return null;
+		if( peterPaul.get("Peter") >= 5000 && peterPaul.get("Paul") >= 10000 ) {
+			Integer partnership = ( ( peterPaul.get("Peter") / 4 ) + ( peterPaul.get("Paul") / 4 ) );
+			peterPaul.put("Peter", peterPaul.get("Peter") * 3 / 4 );
+			peterPaul.put("Paul", peterPaul.get("Paul") * 3 / 4 );
+			peterPaul.put("PeterPaulPartnership", partnership );
+		}
+		return peterPaul;
 	}
 
 	/*
