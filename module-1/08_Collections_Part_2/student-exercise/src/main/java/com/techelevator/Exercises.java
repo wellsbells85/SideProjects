@@ -1,6 +1,7 @@
 package com.techelevator;
 
 import java.util.HashMap;
+
 import java.util.Map;
 
 public class Exercises {
@@ -34,7 +35,29 @@ public class Exercises {
 	 *
 	 */
 	public String animalGroupName(String animalName) {
-		return null;
+		
+		Map<String, String> groupName = new HashMap<>();
+		
+		groupName.put( "RHINO", "Crash" );
+		groupName.put( "GIRAFFE", "Tower" );
+		groupName.put( "ELEPHANT", "Herd" );
+		groupName.put( "LION", "Pride" );
+		groupName.put( "CROW","Murder" );
+		groupName.put( "PIGEON", "Kit" );
+		groupName.put( "FLAMINGO", "Pat" );
+		groupName.put( "DEER", "Herd" );
+		groupName.put( "DOG", "Pack" );
+		groupName.put( "CROCODILE", "Float" );
+		
+		if( animalName == null ) {
+			return "unknown";
+		} 
+		
+		animalName = animalName.toUpperCase();
+		
+		if( !groupName.containsKey(animalName) ) {
+			return "unknown";
+		} return groupName.get(animalName);
 	}
 
 	/*
@@ -60,7 +83,24 @@ public class Exercises {
 	 *
 	 */
 	public double isItOnSale(String itemNumber) {
-		return -1.0;
+		Map<String, Double> discountPercent = new HashMap<>();
+		
+		discountPercent.put( "KITCHEN4001", 0.20 );
+		discountPercent.put( "GARAGE1070", 0.15 );
+		discountPercent.put( "LIVINGROOM", 0.10 );
+		discountPercent.put( "KITCHEN6073", 0.40 );
+		discountPercent.put( "BEDROOM3434", 0.60 );
+		discountPercent.put( "BATH0073", 0.15 );
+		
+		if( itemNumber == null ) {
+			return 0.00;
+		} 
+		
+		itemNumber = itemNumber.toUpperCase();
+		
+		if( !discountPercent.containsKey(itemNumber) ) {
+			return 0.00;
+		} return discountPercent.get(itemNumber);
 	}
 
 	/*
