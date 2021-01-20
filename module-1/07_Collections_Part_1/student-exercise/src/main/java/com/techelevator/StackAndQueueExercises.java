@@ -1,6 +1,8 @@
 package com.techelevator;
 
-import java.util.List;
+import java.util.*;
+
+
 
 public class StackAndQueueExercises {
 
@@ -13,7 +15,11 @@ public class StackAndQueueExercises {
 		-> ["way", "the", "all", "jingle", "bells", "jingle", "bells", "jingle"]
 	 */
 	public List<String> reverseList(List<String> stringList) {
-		return null;
+		List<String> stringReversed = new ArrayList<String>();
+		for( int i = 0; i < stringList.size(); i++ ) {
+			stringReversed.add(stringList.get( stringList.size() - 1 - i ) );
+		}
+		return stringReversed;
 	}
 	
 	/*
@@ -26,7 +32,34 @@ public class StackAndQueueExercises {
 	 boardingGate( [0, -1, 44, 31, 17, 7, 27, 16, 26, 6] ) -> [7, 6, 17, 16, 27, 26]
 	 */
 	public List<Integer> boardingGate(List<Integer> seatNumberList) {
-		return null;
+		List<Integer> groupOne = new ArrayList<Integer>();
+		List<Integer> groupTwo = new ArrayList<Integer>();
+		List<Integer> groupThree = new ArrayList<Integer>();
+		List<Integer> groupAll = new ArrayList<Integer>();
+		for( int i = 0; i < seatNumberList.size(); i++ ) {
+			if( seatNumberList.get(i) > 0 && seatNumberList.get(i) <= 10 ) {
+				groupOne.add(seatNumberList.get(i) );
+			}
+			if( seatNumberList.get(i) > 10 && seatNumberList.get(i) <= 20 ) {
+				groupTwo.add(seatNumberList.get(i) );
+			}
+			if( seatNumberList.get(i) > 20 && seatNumberList.get(i) <= 30 ) {
+				groupThree.add(seatNumberList.get(i) );
+			}	
+		} 
+		
+		for( int i = 0; i < groupOne.size(); i++ ) {
+			groupAll.add(groupOne.get(i) );
+		}
+		for( int i = 0; i < groupTwo.size(); i++ ) {
+			groupAll.add(groupTwo.get(i) );
+		}
+		for( int i = 0; i < groupThree.size(); i++ ) {
+			groupAll.add(groupThree.get(i) );
+		}
+		
+		
+		return groupAll;
 	}
 
 
