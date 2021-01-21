@@ -156,7 +156,9 @@ public class Exercises {
 	 interleaveLists( [1, 2, 3], [4, 5, 6] )  ->  [1, 4, 2, 5, 3, 6]
 	 */
 	public List<Integer> interleaveLists(List<Integer> listOne, List<Integer> listTwo) {
+		
 		List<Integer> combinedList = new ArrayList<Integer>();
+		
 		if( listOne.size() > listTwo.size() ) {
 			for( int i = 0; i < listTwo.size(); i++ ) {
 				combinedList.add(listOne.get(i) );
