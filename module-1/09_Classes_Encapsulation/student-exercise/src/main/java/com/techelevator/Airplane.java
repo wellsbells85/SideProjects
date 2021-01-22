@@ -5,10 +5,8 @@ public class Airplane {
 	private String planeNumber;
 	private int totalFirstClassSeats;
 	private int bookedFirstClassSeats;
-	private int availableFirstClassSeats;
 	private int totalCoachSeats;
 	private int bookedCoachSeats;
-	private int availableCoachSeats;
 	
 	
 	public Airplane(String myPlaneNumber, int myTotalFirstClassSeats, int myTotalCoachSeats) {
@@ -20,18 +18,20 @@ public class Airplane {
 	public boolean reserveSeats(boolean forFirstClass, int totalNumberOfSeats) {
 		
 		if(forFirstClass) {
-			bookedFirstClassSeats += totalNumberOfSeats;
+			if( totalNumberOfSeats > getAvailableFirstClassSeats() ) {
+				return false;
+			} else {
+				bookedFirstClassSeats +=totalNumberOfSeats;
+				return true;
+			}	
 		} else {
-			bookedCoachSeats += totalNumberOfSeats;
-		}
-		
-		if( forFirstClass && bookedFirstClassSeats <= availableFirstClassSeats) {
-			return true;
-		} else if( !forFirstClass && bookedCoachSeats <= availableCoachSeats) {
-			return true;
-		} else {
-			return false;
-		}
+			if( totalNumberOfSeats > getAvailableCoachSeats() ) {
+				return false;
+			} else {
+				bookedCoachSeats += totalNumberOfSeats;
+				return true;
+			}
+		}         
 	}
 	
 	public String getPlaneNumber() {
@@ -47,7 +47,7 @@ public class Airplane {
 	}
 	
 	public int getAvailableFirstClassSeats() {
-		availableFirstClassSeats = totalFirstClassSeats - bookedFirstClassSeats;
+		int availableFirstClassSeats = totalFirstClassSeats - bookedFirstClassSeats;
 		return availableFirstClassSeats;
 	}
 	
@@ -60,7 +60,7 @@ public class Airplane {
 	}
 	
 	public int getAvailableCoachSeats() {
-		availableCoachSeats = totalCoachSeats - bookedCoachSeats;
+		int availableCoachSeats = totalCoachSeats - bookedCoachSeats;
 		return availableCoachSeats;
 	}
 }
