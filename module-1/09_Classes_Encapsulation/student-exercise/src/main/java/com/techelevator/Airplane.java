@@ -17,6 +17,23 @@ public class Airplane {
 		totalCoachSeats = myTotalCoachSeats;
 	}
 	
+	public boolean reserveSeats(boolean forFirstClass, int totalNumberOfSeats) {
+		
+		if(forFirstClass) {
+			bookedFirstClassSeats += totalNumberOfSeats;
+		} else {
+			bookedCoachSeats += totalNumberOfSeats;
+		}
+		
+		if( forFirstClass && bookedFirstClassSeats <= availableFirstClassSeats) {
+			return true;
+		} else if( !forFirstClass && bookedCoachSeats <= availableCoachSeats) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+	
 	public String getPlaneNumber() {
 		return planeNumber;
 	}
@@ -46,32 +63,4 @@ public class Airplane {
 		availableCoachSeats = totalCoachSeats - bookedCoachSeats;
 		return availableCoachSeats;
 	}
-	
-	public boolean reserveSeats(boolean forFirstClass, int totalNumberOfSeats) {
-		
-		if(forFirstClass) {
-			bookedFirstClassSeats += totalNumberOfSeats;
-		} else {
-			bookedCoachSeats += totalNumberOfSeats;
-		}
-		
-		if( availableFirstClassSeats >= totalNumberOfSeats || availableCoachSeats >= totalNumberOfSeats ) {
-			return true;
-		} else {
-			return false;
-		}
-		
-
-	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 }
