@@ -10,6 +10,14 @@ public class FruitTree {
 		piecesOfFruitLeft = myStartingPiecesOfFruit;
 	}
 	
+	public String getTypeOfFruit() {
+		return typeOfFruit;
+	}
+	
+	public int getPiecesOfFruitLeft() {
+		return piecesOfFruitLeft;
+	}
+	
 	public boolean pickFruit( int numberOfPiecesToRemove ) {
 		
 		if( numberOfPiecesToRemove <= piecesOfFruitLeft ) {
@@ -19,14 +27,6 @@ public class FruitTree {
 			return false;
 		}
 		
-	}
-	
-	public String getTypeOfFruit() {
-		return typeOfFruit;
-	}
-	
-	public int getPiecesOfFruitLeft() {
-		return piecesOfFruitLeft;
 	}
 
 }
