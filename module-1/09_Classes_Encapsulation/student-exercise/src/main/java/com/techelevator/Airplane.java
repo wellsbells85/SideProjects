@@ -9,10 +9,10 @@ public class Airplane {
 	private int bookedCoachSeats;
 	
 	
-	public Airplane(String myPlaneNumber, int myTotalFirstClassSeats, int myTotalCoachSeats) {
-		planeNumber = myPlaneNumber;
-		totalFirstClassSeats = myTotalFirstClassSeats;
-		totalCoachSeats = myTotalCoachSeats;
+	public Airplane(String planeNumber, int totalFirstClassSeats, int totalCoachSeats) {
+		this.planeNumber = planeNumber;
+		this.totalFirstClassSeats = totalFirstClassSeats;
+		this.totalCoachSeats = totalCoachSeats;
 	}
 	
 	public boolean reserveSeats(boolean forFirstClass, int totalNumberOfSeats) {
