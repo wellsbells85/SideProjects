@@ -14,11 +14,11 @@ public class SavingsAccount extends BankAccount {
 	}
 	
 	@Override
-	public int withdraw(int amountToWithdraw) {
-		if(super.getBalance() - amountToWithdraw < 0) {
+	public BigDecimal withdraw(BigDecimal amountToWithdraw) {
+		if(super.getBalance().subtract(amountToWithdraw).compareTo(BigDecimal.ZERO) < 0) {
 			return super.getBalance();
-		} else if( super.getBalance() - amountToWithdraw < 150) {
-			return super.withdraw(amountToWithdraw + 2);
+		} else if( super.getBalance().subtract(amountToWithdraw).compareTo(BigDecimal.valueOf(150)) < 0) {
+			return super.withdraw(amountToWithdraw.add(BigDecimal.valueOf(2)));
 		} else {
 			return super.withdraw(amountToWithdraw);
 		}
