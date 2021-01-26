@@ -48,7 +48,7 @@ The `BankAccount` class represents a simple checking or savings account at a ban
 | ----------------- | --------- | --- | ------- | ------------------------------------------------------------ |
 | accountHolderName | String    | X   |         | Returns the account holder name that the account belongs to. |
 | accountNumber     | String    | X   |         | Returns the account number that the account belongs to.      |
-| balance           | int       | X   |  | Returns the balance value of the bank account in dollars.    |
+| balance           | int       | X   |  		| Returns the balance value of the bank account in dollars.    |
 
 | Method Name                    | Return Type | Description                                                                                             |
 | ------------------------------ | ----------- | ------------------------------------------------------------------------------------------------------- |
