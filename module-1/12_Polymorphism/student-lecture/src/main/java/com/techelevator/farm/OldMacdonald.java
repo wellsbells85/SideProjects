@@ -1,9 +1,15 @@
 package com.techelevator.farm;
 
 public class OldMacdonald {
+	
 	public static void main(String[] args) {
+		
+		Cow cow = new Cow();
+		Chicken chick = new Chicken();
+		
+		chick.layEgg();
 
-		FarmAnimal[] farmAnimals = new FarmAnimal[] { new Cow(), new Chicken() };
+		FarmAnimal[] farmAnimals = new FarmAnimal[] { cow, chick };
 
 		for (FarmAnimal animal : farmAnimals) {
 			String name = animal.getName();

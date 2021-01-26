@@ -17,7 +17,12 @@ public class BankAccount {
         this.accountNumber = accountNumber;
         this.balance = balance;
     }
-
+    
+    public int transferTo(BankAccount destinationAccount, int transferAmount) {
+    	destinationAccount.deposit(transferAmount);
+    	return withdraw(transferAmount);
+    }
+    
     public String getAccountHolderName() {
         return accountHolderName;
     }
