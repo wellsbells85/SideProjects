@@ -1,18 +1,20 @@
 package com.techelevator;
 
+import java.math.BigDecimal;
+
 public class BankAccount {
 	
 	private String accountHolderName;
 	private String accountNumber;
-	private int balance;
+	private BigDecimal balance;
 	
 	public BankAccount(String accountHolderName, String accountNumber) {
 		this.accountHolderName = accountHolderName;
 		this.accountNumber = accountNumber;
-		this.balance = 0;
+		this.balance = BigDecimal.ZERO;
 	}
 	
-	public BankAccount(String accountHolderName, String accountNumber, int balance) {
+	public BankAccount(String accountHolderName, String accountNumber, BigDecimal balance) {
 		this.accountHolderName = accountHolderName;
 		this.accountNumber = accountNumber;
 		this.balance = balance;
@@ -26,17 +28,17 @@ public class BankAccount {
 		return accountNumber;
 	}
 	
-	public int getBalance() {
+	public BigDecimal getBalance() {
 		return balance;
 	}
 	
-	public int deposit(int amountToDeposit) {
-		balance =  getBalance() + amountToDeposit;
+	public BigDecimal deposit(BigDecimal amountToDeposit) {
+		balance =  getBalance().add(amountToDeposit);
 		return balance;
 	}
 	
-	public int withdraw(int amountToWithdraw) {
-		balance = getBalance() - amountToWithdraw;
+	public BigDecimal withdraw(BigDecimal amountToWithdraw) {
+		balance = getBalance().subtract(amountToWithdraw);
 		return balance;
 	}
 	
