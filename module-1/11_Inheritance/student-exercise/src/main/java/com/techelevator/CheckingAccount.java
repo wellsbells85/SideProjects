@@ -1,5 +1,7 @@
 package com.techelevator;
 
+import java.math.BigDecimal;
+
 public class CheckingAccount extends BankAccount {
 	
 	public CheckingAccount(String accountNumber, String accountHolderName) {
@@ -7,16 +9,16 @@ public class CheckingAccount extends BankAccount {
 		super.getBalance();
 	}
 	
-	public CheckingAccount(String accountNumber, String accountHolderName, int balance) {
+	public CheckingAccount(String accountNumber, String accountHolderName, BigDecimal balance) {
 		super(accountNumber, accountHolderName, balance);
 	}
 	
 	@Override
-	public int withdraw(int amountToWithdraw) {
-		if(super.getBalance() - amountToWithdraw <= -100 ) {
+	public BigDecimal withdraw(BigDecimal amountToWithdraw) {
+		if(super.getBalance().subtract(amountToWithdraw).compareTo(BigDecimal.valueOf(-100)) <= 0 ) {
 			return super.getBalance();
-		} else if( super.getBalance() - amountToWithdraw < 0) {
-			return super.withdraw(amountToWithdraw + 10);
+		} else if( super.getBalance().subtract(amountToWithdraw).compareTo(BigDecimal.ZERO) < 0) {
+			return super.withdraw(amountToWithdraw.add(BigDecimal.TEN));
 		} else {
 			return super.withdraw(amountToWithdraw);
 		}

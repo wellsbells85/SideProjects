@@ -1,5 +1,7 @@
 package com.techelevator;
 
+import java.math.BigDecimal;
+
 public class SavingsAccount extends BankAccount {
 
 	public SavingsAccount(String accountNumber, String accountHolderName) {
@@ -7,7 +9,7 @@ public class SavingsAccount extends BankAccount {
 		super.getBalance();
 	}
 	
-	public SavingsAccount(String accountNumber, String accountHolderName, int balance) {
+	public SavingsAccount(String accountNumber, String accountHolderName, BigDecimal balance) {
 		super(accountNumber, accountHolderName, balance);
 	}
 	
