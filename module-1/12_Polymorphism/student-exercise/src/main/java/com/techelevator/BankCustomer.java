@@ -14,7 +14,20 @@ public class BankCustomer implements Accountable {
 	public BankCustomer() {
 	}
 	
+	public void addAccount(Accountable newAccount) {
+		accounts.add(newAccount);
+	}
+	
+	public boolean isVip() {
+		if(getBalance() >= 25000) {
+			return true;
+		} return false;
+	}
+	
 	public int getBalance() {
+		for( int i = 0; i < accounts.size(); i++) {
+			balance += accounts.get(i).getBalance();
+		}
 		return balance;
 	}
 	
@@ -24,10 +37,6 @@ public class BankCustomer implements Accountable {
 			account[i] = accounts.get(i);	
 		} return account;
 		
-	}
-	
-	public void addAccount(Accountable newAccount) {
-		accounts.add(newAccount);
 	}
 	
 	public String getName() {
@@ -43,7 +52,7 @@ public class BankCustomer implements Accountable {
 	}
 	
 	public void setAddress(String address) {
-		this.name = address;
+		this.address = address;
 	}
 	
 	public String getPhoneNumber() {
