@@ -3,8 +3,6 @@ package com.techelevator;
 public class CreditCardAccount extends BankAccount {
 	
 	private int debt;
-	private String accountHolder;
-	private String accountNumber;
 	
 	public CreditCardAccount(String accountHolder, String accountNumber) {
 		super(accountHolder, accountNumber);
@@ -21,6 +19,10 @@ public class CreditCardAccount extends BankAccount {
 		return getDebt();
 	}
 	
+	public int getDebt() {
+		return debt;
+	}
+	
 	public String getAccountHolder() {
 		return super.getAccountHolderName();
 	}
@@ -29,9 +31,6 @@ public class CreditCardAccount extends BankAccount {
 		return super.getAccountNumber();
 	}
 	
-	public int getDebt() {
-		return debt;
-	}
 	
 	@Override
 	public int getBalance() {
