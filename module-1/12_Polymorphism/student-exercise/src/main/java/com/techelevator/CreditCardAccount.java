@@ -33,6 +33,7 @@ public class CreditCardAccount extends BankAccount {
 		return debt;
 	}
 	
+	@Override
 	public int getBalance() {
 		return -debt;
 	}
