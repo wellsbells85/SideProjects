@@ -10,7 +10,7 @@ public class WordSearch {
 
 	public static void main(String[] args) throws FileNotFoundException {
 		
-		
+		File userFile = getInputFileFromUser();
 		boolean userCaseSensitive = false;
 		String userString = getInputStringFromUser();
 		System.out.print("Do you want case sensitive results only? (Y or N)");
@@ -21,7 +21,7 @@ public class WordSearch {
 		}
 		
 		int lineCounter = 0;
-		File userFile = getInputFileFromUser();
+		
 		try(Scanner fileScanner = new Scanner(userFile)) {
 			while(fileScanner.hasNextLine()) {
 				lineCounter++;
