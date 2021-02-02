@@ -14,8 +14,8 @@ public class WordSearch {
 		boolean userCaseSensitive = false;
 		String userString = getInputStringFromUser();
 		System.out.print("Do you want case sensitive results only? (Y or N)");
-		Scanner answerScanner = new Scanner(System.in);
-		String answer = answerScanner.nextLine();
+		Scanner scanner = new Scanner(System.in);
+		String answer = scanner.nextLine();
 		if(answer.toUpperCase().equals("Y") ) {
 			userCaseSensitive = true;
 		}
@@ -61,15 +61,8 @@ public class WordSearch {
 		return userString;
 	}
 			
-//		File inputString = new File(path);
-//		if(inputFile.exists() == false) { // checks for the existence of a file
-//			System.out.println(path +" does not exist");
-//			System.exit(1); // Ends the program
-//		} else if(inputFile.isFile() == false) {
-//			System.out.println(path +" is not a file");
-//			System.exit(1); // Ends the program
-//		} return inputFile;
-	} 			
+
+} //end program		
 	
 	
 	
