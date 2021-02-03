@@ -20,20 +20,20 @@ public class FizzWriter {
 		System.out.println("I'll make sure your output is stored correctly!");
 		System.out.println("===============================================\n");
 		
-		while(repeat) {
-			System.out.print("\nEnter the path directory you need (enter period . for default): ");
-			String path = scanner.nextLine();
-			File directory = new File(path);
-			System.out.println("The current directory is: \n" + directory.getAbsolutePath());
-			System.out.print("\nIs this correct? (Y or N)");
-			String answer = scanner.nextLine();
-			if(answer.equalsIgnoreCase("y") ) {
-				repeat = false;
-			} 
-		}
+//		while(repeat) {
+//			System.out.print("\nEnter the path directory you need (enter period . for default): ");
+//			String path = scanner.nextLine();
+//			File directory = new File(path);
+//			System.out.println("The current directory is: \n" + directory.getAbsolutePath());
+//			System.out.print("\nIs this correct? (Y or N)");
+//			String answer = scanner.nextLine();
+//			if(answer.equalsIgnoreCase("y") ) {
+//				repeat = false;
+//			} 
+//		}
 		
-		System.out.print("\nPlease enter the name of the file you wish to create: ");
-		String pathName = scanner.nextLine(); //name the file
+//		System.out.print("\nPlease enter the name of the file you wish to create: ");
+		String pathName = "FizzBuzz.txt"; //name the file
 		File fileName = new File(pathName); //create the file object
 		
 		if(fileName.exists() ) {
