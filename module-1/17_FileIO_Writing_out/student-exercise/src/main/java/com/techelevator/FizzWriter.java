@@ -18,10 +18,10 @@ public class FizzWriter {
 		System.out.println("===============================================");
 		System.out.println("          Welcome to the FizzWriter ");
 		System.out.println("I'll make sure your output is stored correctly!");
-		System.out.println("===============================================\n\n");
+		System.out.println("===============================================\n");
 		
 		while(repeat) {
-			System.out.print("Enter the path directory you need (enter period . for default): ");
+			System.out.print("\nEnter the path directory you need (enter period . for default): ");
 			String path = scanner.nextLine();
 			File directory = new File(path);
 			System.out.println("The current directory is: \n" + directory.getAbsolutePath());
@@ -29,7 +29,7 @@ public class FizzWriter {
 			String answer = scanner.nextLine();
 			if(answer.equalsIgnoreCase("y") ) {
 				repeat = false;
-			}
+			} 
 		}
 		
 		System.out.print("\nPlease enter the name of the file you wish to create: ");
@@ -37,7 +37,7 @@ public class FizzWriter {
 		File fileName = new File(pathName); //create the file object
 		
 		if(fileName.exists() ) {
-			System.out.print("\nSorry, the file already exists. Would you like to overwrite it? (Y or N) : ");
+			System.out.print("\nSorry, the file already exists. Would you like to overwrite it? (Y or N)");
 			String answer = scanner.nextLine();
 			if(answer.equalsIgnoreCase("n") ) {
 				System.out.print("\nOk, would you like to create a new file? (Y or N)" );
@@ -49,14 +49,14 @@ public class FizzWriter {
 						System.out.println("\nI'm going to append the file name and try again for you!");
 						String[] fileNameParts = pathName.split("\\.");
 						pathName = fileNameParts[0];
-						for(int i = 0; i < Integer.MAX_VALUE - 1; i++) {
+						for(int i = 0; i < Integer.MAX_VALUE - 1; i += 0) {
 							String appendPathName = String.valueOf(++i); //convert i into a string
 							pathName = pathName + appendPathName + ".txt"; //add the string to the end of the path name
 							fileName = new File(pathName); //create the updated file
 							if(!fileName.exists() ) { //check if the new file exists
 								break; //break out if it does
-							} else { //else split the fileName
-								fileNameParts = pathName.split("\\.");
+							} else { //else split the fileName with regex
+								fileNameParts = pathName.split("[\\d+]*\\.");
 								pathName = fileNameParts[0];
 							}
 						}
