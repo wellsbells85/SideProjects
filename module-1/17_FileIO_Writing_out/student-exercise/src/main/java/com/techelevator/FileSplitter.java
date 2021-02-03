@@ -13,33 +13,33 @@ public class FileSplitter {
 		File userFile = getInputFileFromUser();
 		
 		Scanner scanner = new Scanner(System.in);
-		System.out.println("How many lines of code do you need in each file?");
+		System.out.print("How many lines of code do you need in each file?");
 		int fileLines = Integer.parseInt(scanner.nextLine() );
 		
 		try(Scanner fileScanner = new Scanner(userFile)) {
-			while(fileScanner.hasNextLine()) {
-				try (PrintWriter writer = new PrintWriter(new FileWriter(userFile))) {
-					File dataFile = new File(".");
-					for(int i = 1; dataFile.exists(); i++) {
-						String newFileString = "Generating input-" + i + ".txt";
-						dataFile = new File(newFileString);
-						for(int j = 0; j < fileLines; j++) {
-							String lineOut = fileScanner.nextLine();
-							writer.println(lineOut);
+			File dataFile = new File(".");
+			for(int i = 1; fileScanner.hasNextLine(); i++) {
+				String newFileString = "Generating input-" + i + ".txt";
+				dataFile = new File(newFileString);
+				dataFile.createNewFile();
+				try (PrintWriter writer = new PrintWriter(new FileWriter(dataFile))) {
+					for(int j = 0; j < fileLines; j++) {
+						if(!fileScanner.hasNextLine()) {
+							break;
 						}
-					}	writer.close();		
+						String lineOut = fileScanner.nextLine();
+						writer.println(lineOut);
+					} writer.close();	
 				} catch(IOException e) {
 					System.out.println("\nThe program was unable to write your file. Sorry.");
 					System.exit(1); //end the program with an irregular error
 				}
-				String line = fileScanner.nextLine();
-				
-			}		
+			} //end for-loop		
 		} catch(IOException e) {
-			System.out.println("\nThe program was unable to write your file. Sorry.");
-			System.exit(1); //end the program with an irregular error
+				System.out.println("\nThe program was unable to write your file. Sorry.");
+				System.exit(1); //end the program with an irregular error
 		}
-	}
+	} //end main
 	
 	private static File getInputFileFromUser() {
 		
@@ -55,6 +55,5 @@ public class FileSplitter {
 			System.out.println(path +" is not a file!");
 			System.exit(1); // Ends the program
 		} return userFile;
-	} 	
-
-}
+	} //end method getInputFileFromUser	
+} //end class FileSplitter
