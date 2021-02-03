@@ -1,6 +1,7 @@
 package com.techelevator;
 
 import java.io.File;
+
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -13,7 +14,6 @@ public class FizzWriter {
 		Scanner scanner = new Scanner(System.in); //create scanner
 		boolean overwrite = false;
 		boolean repeat = true;
-		int fileCounter = 0;
 		
 		System.out.println("===============================================");
 		System.out.println("          Welcome to the FizzWriter ");
@@ -21,7 +21,7 @@ public class FizzWriter {
 		System.out.println("===============================================\n\n");
 		
 		while(repeat) {
-			System.out.print("Enter the path directory you need: ");
+			System.out.print("Enter the path directory you need (enter period . for default): ");
 			String path = scanner.nextLine();
 			File directory = new File(path);
 			System.out.println("The current directory is: \n" + directory.getAbsolutePath());
@@ -36,30 +36,38 @@ public class FizzWriter {
 		String pathName = scanner.nextLine(); //name the file
 		File fileName = new File(pathName); //create the file object
 		
-		repeat = true;
-		while(repeat) {
-			if(fileName.exists() ) {
-				System.out.print("\nSorry, the file already exists. Would you like to overwrite it? (Y or N) : ");
-				String answer = scanner.nextLine();
-				if(answer.equalsIgnoreCase("n") ) {
-					System.out.print("\nOk, would you like to create a new file? (Y or N)" );
-					answer = scanner.nextLine();
-						if(answer.equalsIgnoreCase("n") ) {
-							System.out.println("\nThere's nothing else I can for you then. Good Bye!");
-							System.exit(0); //exit normally because user does not meet basic requirements for using program
-						} else {
-							System.out.println("\nI'm going to append the file name and try again for you!");
-							String appendPathName = String.valueOf(fileCounter++); //use counter to add convert a number to string to add to end of path name
-							pathName += appendPathName;
-							fileName = new File(pathName); //create the updated File object to send to beginning of while-loop
+		if(fileName.exists() ) {
+			System.out.print("\nSorry, the file already exists. Would you like to overwrite it? (Y or N) : ");
+			String answer = scanner.nextLine();
+			if(answer.equalsIgnoreCase("n") ) {
+				System.out.print("\nOk, would you like to create a new file? (Y or N)" );
+				answer = scanner.nextLine();
+					if(answer.equalsIgnoreCase("n") ) {
+						System.out.println("\nThere's nothing else I can for you then. Good Bye!");
+						System.exit(0); //exit normally because user does not meet basic requirements for using program
+					} else {
+						System.out.println("\nI'm going to append the file name and try again for you!");
+						String[] fileNameParts = pathName.split("\\.");
+						pathName = fileNameParts[0];
+						for(int i = 0; i < Integer.MAX_VALUE - 1; i++) {
+							String appendPathName = String.valueOf(++i); //convert i into a string
+							pathName = pathName + appendPathName + ".txt"; //add the string to the end of the path name
+							fileName = new File(pathName); //create the updated file
+							if(!fileName.exists() ) { //check if the new file exists
+								break; //break out if it does
+							} else { //else split the fileName
+								fileNameParts = pathName.split("\\.");
+								pathName = fileNameParts[0];
+							}
 						}
-				} else if(answer.equalsIgnoreCase("y") ) {
-					System.out.println("\nOk, we're just going to overwrite your existing file then.");
-					overwrite = !overwrite;
-					repeat = !repeat;	
-				}
-			}	
-		} // end while-loop		
+					}
+			} else if(answer.equalsIgnoreCase("y") ) {
+				System.out.println("\nOk, we're just going to overwrite your existing file then.");
+				overwrite = !overwrite;
+				repeat = !repeat;	
+			}
+		}	
+		
 			
 		try {
 			fileName.createNewFile(); //write the file
