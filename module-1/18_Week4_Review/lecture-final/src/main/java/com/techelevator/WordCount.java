@@ -8,7 +8,7 @@ public class WordCount {
 
 	public static void main(String[] args) {
 		
-		String path = "alice.txt";
+		String path = "alices.txt";
 		File inputFile = new File(path);
 		
 		int wordCount = 0;
