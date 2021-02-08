@@ -13,7 +13,7 @@ public class FindAndReplace {
 
 		Scanner keyboard = new Scanner(System.in);
 		
-		String inputPath = "alice.txt";
+		String inputPath = "alices.txt";
 		File inputFile = new File(inputPath);
 		System.out.println("Source File is: " + inputFile.getName());
 		
