@@ -56,7 +56,7 @@ WHERE countrycode = 'CHN'
 ;
 -- 7. The maximum population of all countries in the world.
 -- (largest country population in world: 1277558000)
-SELECT name, MAX(population) AS max_pop_country
+SELECT MAX(population) AS max_pop_country
 FROM country
 ;
 -- 8. The maximum population of all cities in the world.
