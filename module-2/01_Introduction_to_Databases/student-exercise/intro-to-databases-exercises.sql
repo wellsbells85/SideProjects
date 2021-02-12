@@ -72,7 +72,7 @@ WHERE countrycode = 'USA' AND population BETWEEN 1000000 AND 2000000
 -- 14. The name and region of all countries in North or South America except for countries in the Caribbean (27 rows)
 SELECT name, region
 FROM country
-WHERE continent IN ('North America', 'South America')
+WHERE region <> 'Caribbean' AND continent IN ('North America','South America')
 ;
 -- 15. The name, population, and GNP of all countries with a GNP greater than $1 trillion dollars and a population of less than 100 million people (4 rows)
 SELECT name, population, gnp
