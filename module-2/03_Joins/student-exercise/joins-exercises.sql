@@ -106,7 +106,7 @@ SELECT c.first_name || ' ' || c.last_name AS customer_name, COUNT(rental_id) AS 
 FROM customer c
 INNER JOIN rental r USING(customer_id)
 GROUP BY customer_id
-ORDER BY rentals DESC
+ORDER BY rentals DESC LIMIT 10
 ;
 -- 14. The first and last name of the top ten customers ranked by dollars spent 
 -- (#1 should be “KARL SEAL” with 221.55 spent, #10 should be “ANA BRADLEY” with 174.66 spent)
@@ -114,7 +114,7 @@ SELECT c.first_name || ' ' || c.last_name AS customer_name, SUM(amount) AS dolla
 FROM customer c
 INNER JOIN payment p USING(customer_id)
 GROUP BY customer_id
-ORDER BY dollars_spent DESC
+ORDER BY dollars_spent DESC LIMIT 10
 ;
 -- 15. The store ID, street address, total number of rentals, total amount of sales (i.e. payments), and average sale of each store.
 -- (NOTE: Keep in mind that an employee may work at multiple stores.)
@@ -135,7 +135,7 @@ FROM film f
 INNER JOIN inventory i USING(film_id)
 INNER JOIN rental r USING(inventory_id)
 GROUP BY film_id
-ORDER BY rentals DESC
+ORDER BY rentals DESC LIMIT 10
 ;
 -- 17. The top five film categories by number of rentals 
 -- (#1 should be “Sports” with 1179 rentals and #5 should be “Family” with 1096 rentals)
@@ -187,5 +187,5 @@ WHERE f.film_id IN
                 WHERE c.name = 'Comedy'         
                 )
 GROUP BY actor_id
-ORDER BY rentals DESC LIMIT 10
+ORDER BY rentals DESC LIMIT 5
 ;
