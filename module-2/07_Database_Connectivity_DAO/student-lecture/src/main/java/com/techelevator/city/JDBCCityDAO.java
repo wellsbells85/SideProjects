@@ -57,20 +57,33 @@ public class JDBCCityDAO implements CityDAO {
 
 	@Override
 	public List<City> findCityByDistrict(String district) {
-		// TODO Auto-generated method stub
-		return null;
+		ArrayList<City> cities = new ArrayList<>();
+		String sqlFindCityByDistrict = "SELECT id, name, countrycode, district, population "+
+										   "FROM city "+
+										   "WHERE district = ?";
+		SqlRowSet results = jdbcTemplate.queryForRowSet(sqlFindCityByDistrict, district);
+		while(results.next()) {
+			City theCity = mapRowToCity(results);
+			cities.add(theCity);
+		}
+		return cities;
 	}
 
 	@Override
 	public void update(City city) {
-		// TODO Auto-generated method stub
-		
+		String sqlUpdateCity = 	"UPDATE city " +
+								"SET 	name = ?, " +
+								"		countrycode = ?, " + 
+								"		district = ?, " +
+								"		population = ?, " +
+								"WHERE 	id = ? ";
+		jdbcTemplate.update(sqlUpdateCity, city.getName(), city.getCountryCode(), city.getDistrict(), city.getPopulation(), city.getId());
 	}
 
 	@Override
 	public void delete(long id) {
-		// TODO Auto-generated method stub
-		
+		String sqlRemoveCity = "DELETE FROM city WHERE id = ? ";
+		jdbcTemplate.update(sqlRemoveCity, id);	
 	}
 
 	private long getNextCityId() {
