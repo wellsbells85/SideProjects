@@ -1,3 +1,13 @@
+/*
+DROP TABLE IF EXISTS project_employee;
+DROP TABLE IF EXISTS project;
+DROP TABLE IF EXISTS employee;
+DROP TABLE IF EXISTS department;
+DROP SEQUENCE IF EXISTS seq_employee_id;
+DROP SEQUENCE IF EXISTS seq_department_id;
+DROP SEQUENCE IF EXISTS seq_project_id;
+*/
+
 CREATE SEQUENCE seq_employee_id;
 
 CREATE TABLE employee (

@@ -21,12 +21,9 @@ public class JDBCCityDAO implements CityDAO {
 		String sqlInsertCity = "INSERT INTO city(id, name, countrycode, district, population) " +
 							   "VALUES(?, ?, ?, ?, ?)";
 		newCity.setId(getNextCityId());
-		jdbcTemplate.update(sqlInsertCity, newCity.getId(),
-										  newCity.getName(),
-										  newCity.getCountryCode(),
-										  newCity.getDistrict(),
-										  newCity.getPopulation());
-	}
+		jdbcTemplate.update(sqlInsertCity, newCity.getId(), newCity.getName(), newCity.getCountryCode(), //continues next line
+							newCity.getDistrict(), newCity.getPopulation() ); //continued from previous line
+	} //end save()
 	
 	@Override
 	public City findCityById(long id) {
@@ -34,12 +31,13 @@ public class JDBCCityDAO implements CityDAO {
 		String sqlFindCityById = "SELECT id, name, countrycode, district, population "+
 							   "FROM city "+
 							   "WHERE id = ?";
+		
 		SqlRowSet results = jdbcTemplate.queryForRowSet(sqlFindCityById, id);
+		
 		if(results.next()) {
 			theCity = mapRowToCity(results);
-		}
-		return theCity;
-	}
+		} return theCity;
+	} //end findCityById()
 
 	@Override
 	public List<City> findCityByCountryCode(String countryCode) {
@@ -47,13 +45,14 @@ public class JDBCCityDAO implements CityDAO {
 		String sqlFindCityByCountryCode = "SELECT id, name, countrycode, district, population "+
 										   "FROM city "+
 										   "WHERE countrycode = ?";
+		
 		SqlRowSet results = jdbcTemplate.queryForRowSet(sqlFindCityByCountryCode, countryCode);
+		
 		while(results.next()) {
 			City theCity = mapRowToCity(results);
 			cities.add(theCity);
-		}
-		return cities;
-	}
+		} return cities;
+	} //end findCityByCountryCode()
 
 	@Override
 	public List<City> findCityByDistrict(String district) {
@@ -61,13 +60,14 @@ public class JDBCCityDAO implements CityDAO {
 		String sqlFindCityByDistrict = "SELECT id, name, countrycode, district, population "+
 										   "FROM city "+
 										   "WHERE district = ?";
+		
 		SqlRowSet results = jdbcTemplate.queryForRowSet(sqlFindCityByDistrict, district);
+		
 		while(results.next()) {
 			City theCity = mapRowToCity(results);
 			cities.add(theCity);
-		}
-		return cities;
-	}
+		} return cities;
+	} //end findCityByDistrict()
 
 	@Override
 	public void update(City city) {
@@ -77,14 +77,15 @@ public class JDBCCityDAO implements CityDAO {
 								"		district = ?, " +
 								"		population = ?, " +
 								"WHERE 	id = ? ";
+		
 		jdbcTemplate.update(sqlUpdateCity, city.getName(), city.getCountryCode(), city.getDistrict(), city.getPopulation(), city.getId());
-	}
+	} //end update()
 
 	@Override
 	public void delete(long id) {
 		String sqlRemoveCity = "DELETE FROM city WHERE id = ? ";
 		jdbcTemplate.update(sqlRemoveCity, id);	
-	}
+	} //end delete()
 
 	private long getNextCityId() {
 		SqlRowSet nextIdResult = jdbcTemplate.queryForRowSet("SELECT nextval('seq_city_id')");
@@ -93,16 +94,16 @@ public class JDBCCityDAO implements CityDAO {
 		} else {
 			throw new RuntimeException("Something went wrong while getting an id for the new city");
 		}
-	}
+	} //end getNextCityId()
 
 	private City mapRowToCity(SqlRowSet results) {
-		City theCity;
-		theCity = new City();
+		City theCity = new City();
 		theCity.setId(results.getLong("id"));
 		theCity.setName(results.getString("name"));
 		theCity.setCountryCode(results.getString("countrycode"));
 		theCity.setDistrict(results.getString("district"));
 		theCity.setPopulation(results.getInt("population"));
 		return theCity;
-	}
-}
+	} //end mapRowToCity()
+	
+} //end class
