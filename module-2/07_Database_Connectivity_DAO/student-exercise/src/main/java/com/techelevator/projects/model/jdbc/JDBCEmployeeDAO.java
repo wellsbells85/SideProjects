@@ -31,7 +31,7 @@ public class JDBCEmployeeDAO implements EmployeeDAO {
 			employee.setLastName(results.getString("last_name"));
 			employee.setId(results.getLong("employee_id"));
 			employee.setBirthDay(LocalDate.parse(results.getString("birth_date")));
-			employee.setGender(results.getString("employee_id").charAt(0));
+			employee.setGender(results.getString("gender").charAt(0));
 			employee.setHireDate(LocalDate.parse(results.getString("hire_date")));
 			employeeList.add(employee);	
 		} return employeeList;
@@ -49,7 +49,7 @@ public class JDBCEmployeeDAO implements EmployeeDAO {
 			employee.setLastName(results.getString("last_name"));
 			employee.setId(results.getLong("employee_id"));
 			employee.setBirthDay(LocalDate.parse(results.getString("birth_date")));
-			employee.setGender(results.getString("employee_id").charAt(0));
+			employee.setGender(results.getString("gender").charAt(0));
 			employee.setHireDate(LocalDate.parse(results.getString("hire_date")));
 			employeeList.add(employee);	
 		} return employeeList;
@@ -67,7 +67,7 @@ public class JDBCEmployeeDAO implements EmployeeDAO {
 			employee.setLastName(results.getString("last_name"));
 			employee.setId(results.getLong("employee_id"));
 			employee.setBirthDay(LocalDate.parse(results.getString("birth_date")));
-			employee.setGender(results.getString("employee_id").charAt(0));
+			employee.setGender(results.getString("gender").charAt(0));
 			employee.setHireDate(LocalDate.parse(results.getString("hire_date")));
 			employeeList.add(employee);	
 		} return employeeList;
@@ -87,7 +87,7 @@ public class JDBCEmployeeDAO implements EmployeeDAO {
 			employee.setLastName(results.getString("last_name"));
 			employee.setId(results.getLong("employee_id"));
 			employee.setBirthDay(LocalDate.parse(results.getString("birth_date")));
-			employee.setGender(results.getString("employee_id").charAt(0));
+			employee.setGender(results.getString("gender").charAt(0));
 			employee.setHireDate(LocalDate.parse(results.getString("hire_date")));
 			employeeList.add(employee);	
 		} return employeeList;
@@ -107,7 +107,7 @@ public class JDBCEmployeeDAO implements EmployeeDAO {
 			employee.setLastName(results.getString("last_name"));
 			employee.setId(results.getLong("employee_id"));
 			employee.setBirthDay(LocalDate.parse(results.getString("birth_date")));
-			employee.setGender(results.getString("employee_id").charAt(0));
+			employee.setGender(results.getString("gender").charAt(0));
 			employee.setHireDate(LocalDate.parse(results.getString("hire_date")));
 			employeeList.add(employee);	
 		} return employeeList;
