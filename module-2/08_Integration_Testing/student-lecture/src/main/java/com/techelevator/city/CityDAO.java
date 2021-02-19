@@ -4,7 +4,7 @@ import java.util.List;
 
 public interface CityDAO {
 
-	public boolean save(City newCity);
+	public void save(City newCity);
 
 	public City findCityById(long id);
 
@@ -12,7 +12,7 @@ public interface CityDAO {
 
 	public List<City> findCityByDistrict(String district);
 
-	public boolean update(City city);
+	public void update(City city);
 
-	public boolean delete(long id);
+	public void delete(long id);
 }

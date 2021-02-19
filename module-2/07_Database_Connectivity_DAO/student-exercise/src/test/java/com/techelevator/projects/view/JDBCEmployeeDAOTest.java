@@ -16,8 +16,6 @@ public class JDBCEmployeeDAOTest {
 	
 	private static SingleConnectionDataSource dataSource;
 	private JDBCDepartmentDAO dao;
-	private static final String EMPLOYEE_ID = "DEFAULT";
-	private static final String DEPARTMENT_ID = "DEFAULT";
 	private static final String FIRST_NAME = "TestFirst";
 	private static final String LAST_NAME = "TestLast";
 	private static final String BIRTH_DATE = "1999-01-01";
@@ -28,7 +26,7 @@ public class JDBCEmployeeDAOTest {
 	@BeforeClass
 	public static void setupDataSource() {
 		dataSource = new SingleConnectionDataSource();
-		dataSource.setUrl("jdbc:postgresql://localhost:5432/world");
+		dataSource.setUrl("jdbc:postgresql://localhost:5432/projects");
 		dataSource.setUsername("postgres");
 		dataSource.setPassword("postgres1");
 		dataSource.setAutoCommit(false);
@@ -42,9 +40,9 @@ public class JDBCEmployeeDAOTest {
 	@Before
 	public void setup() {
 		String sqlInsertDummyDepartment = "INSERT INTO employee (employee_id, department_id, first_name, last_name, birth_date, gender, hire_date) "
-										+ "VALUES (?, ?, ?, ?, ?, ?, ?)";
+										+ "VALUES (DEFAULT, DEFAULT, ?, ?, ?, ?, ?)";
 		JdbcTemplate jdbcTemplate = new JdbcTemplate(dataSource);
-		jdbcTemplate.update(sqlInsertDummyDepartment, EMPLOYEE_ID, DEPARTMENT_ID, FIRST_NAME, LAST_NAME, BIRTH_DATE, GENDER, HIRE_DATE);
+		jdbcTemplate.update(sqlInsertDummyDepartment, FIRST_NAME, LAST_NAME, BIRTH_DATE, GENDER, HIRE_DATE);
 		dao = new JDBCDepartmentDAO(dataSource);
 	}
 

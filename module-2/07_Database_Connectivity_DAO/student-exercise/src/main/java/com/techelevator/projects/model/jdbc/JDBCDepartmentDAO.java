@@ -36,12 +36,12 @@ public class JDBCDepartmentDAO implements DepartmentDAO {
 	@Override
 	public List<Department> searchDepartmentsByName(String nameSearch) {
 		List<Department> departments = new ArrayList<>();
-		String sqlFindDepartmentsByName = "SELECT name FROM department WHERE name ILIKE ?";
+		String sqlFindDepartmentsByName = "SELECT name, department_id FROM department WHERE name ILIKE ?";
 		SqlRowSet results = jdbcTemplate.queryForRowSet(sqlFindDepartmentsByName, "%" + nameSearch + "%");
 		while (results.next()) {
-			String theDepartment = results.getString("name");
 			Department department = new Department();
-			department.setName(theDepartment);
+			department.setName(results.getString("name"));
+			department.setId(results.getLong("department_id"));
 			departments.add(department);
 		}
 		return departments;
@@ -64,12 +64,11 @@ public class JDBCDepartmentDAO implements DepartmentDAO {
 	@Override
 	public Department getDepartmentById(Long id) {
 		Department department = new Department();
-		String sqlFindDepartmentsById = "SELECT name FROM department WHERE department_id = ?";
+		String sqlFindDepartmentsById = "SELECT name, department_id FROM department WHERE department_id = ?";
 		SqlRowSet results = jdbcTemplate.queryForRowSet(sqlFindDepartmentsById, id);
-
 		while (results.next()) {
-			String theDepartment = results.getString("name");
-			department.setName(theDepartment);
+			department.setName(results.getString("name"));
+			department.setId(results.getLong("department_id"));
 		}
 		return department;
 	} // end getDepartmentById()
