@@ -23,13 +23,14 @@ public class JDBCEmployeeDAO implements EmployeeDAO {
 	@Override
 	public List<Employee> getAllEmployees() {
 		List<Employee> employeeList = new ArrayList<>();
-		String sqlFindAllEmployees = "SELECT first_name, last_name, employee_id, birth_date, gender, hire_date FROM employee";	
+		String sqlFindAllEmployees = "SELECT employee_id, department_id, first_name, last_name, birth_date, gender, hire_date FROM employee";	
 		SqlRowSet results = jdbcTemplate.queryForRowSet(sqlFindAllEmployees);
 		while(results.next()) {
 			Employee employee = new Employee();
+			employee.setId(results.getLong("employee_id"));
+			employee.setDepartmentId(results.getLong("department_id"));
 			employee.setFirstName(results.getString("first_name"));
 			employee.setLastName(results.getString("last_name"));
-			employee.setId(results.getLong("employee_id"));
 			employee.setBirthDay(LocalDate.parse(results.getString("birth_date")));
 			employee.setGender(results.getString("gender").charAt(0));
 			employee.setHireDate(LocalDate.parse(results.getString("hire_date")));
@@ -40,14 +41,15 @@ public class JDBCEmployeeDAO implements EmployeeDAO {
 	@Override
 	public List<Employee> searchEmployeesByName(String firstNameSearch, String lastNameSearch) {
 		List<Employee> employeeList = new ArrayList<>();
-		String sqlFindAllEmployees = "SELECT first_name, last_name, employee_id, birth_date, gender, hire_date " +
+		String sqlFindAllEmployees = "SELECT employee_id, department_id, first_name, last_name, birth_date, gender, hire_date " +
 									 "FROM employee WHERE first_name ILIKE ? AND last_name ILIKE ? ";	
 		SqlRowSet results = jdbcTemplate.queryForRowSet(sqlFindAllEmployees, "%" + firstNameSearch + "%", "%" + lastNameSearch + "%");
 		while(results.next()) {
 			Employee employee = new Employee();
+			employee.setId(results.getLong("employee_id"));
+			employee.setDepartmentId(results.getLong("department_id"));
 			employee.setFirstName(results.getString("first_name"));
 			employee.setLastName(results.getString("last_name"));
-			employee.setId(results.getLong("employee_id"));
 			employee.setBirthDay(LocalDate.parse(results.getString("birth_date")));
 			employee.setGender(results.getString("gender").charAt(0));
 			employee.setHireDate(LocalDate.parse(results.getString("hire_date")));
@@ -58,14 +60,15 @@ public class JDBCEmployeeDAO implements EmployeeDAO {
 	@Override
 	public List<Employee> getEmployeesByDepartmentId(long id) {
 		List<Employee> employeeList = new ArrayList<>();
-		String sqlFindAllEmployees = "SELECT first_name, last_name, employee_id, birth_date, gender, hire_date " +
+		String sqlFindAllEmployees = "SELECT employee_id, department_id, first_name, last_name, birth_date, gender, hire_date " +
 				  					 "FROM employee WHERE department_id = ? ";
 		SqlRowSet results = jdbcTemplate.queryForRowSet(sqlFindAllEmployees, id);
 		while(results.next()) {
 			Employee employee = new Employee();
+			employee.setId(results.getLong("employee_id"));
+			employee.setDepartmentId(results.getLong("department_id"));
 			employee.setFirstName(results.getString("first_name"));
 			employee.setLastName(results.getString("last_name"));
-			employee.setId(results.getLong("employee_id"));
 			employee.setBirthDay(LocalDate.parse(results.getString("birth_date")));
 			employee.setGender(results.getString("gender").charAt(0));
 			employee.setHireDate(LocalDate.parse(results.getString("hire_date")));
@@ -76,16 +79,17 @@ public class JDBCEmployeeDAO implements EmployeeDAO {
 	@Override
 	public List<Employee> getEmployeesWithoutProjects() {
 		List<Employee> employeeList = new ArrayList<>();
-		String sqlFindAllEmployees = 	"SELECT first_name, last_name, employee_id, birth_date, gender, hire_date " +
+		String sqlFindAllEmployees = 	"SELECT employee_id, department_id, first_name, last_name, birth_date, gender, hire_date " +
 										"FROM employee " +
 										"LEFT JOIN project_employee USING(employee_id) " +
 										"WHERE project_id IS NULL";
 		SqlRowSet results = jdbcTemplate.queryForRowSet(sqlFindAllEmployees);
 		while(results.next()) {
 			Employee employee = new Employee();
+			employee.setId(results.getLong("employee_id"));
+			employee.setDepartmentId(results.getLong("department_id"));
 			employee.setFirstName(results.getString("first_name"));
 			employee.setLastName(results.getString("last_name"));
-			employee.setId(results.getLong("employee_id"));
 			employee.setBirthDay(LocalDate.parse(results.getString("birth_date")));
 			employee.setGender(results.getString("gender").charAt(0));
 			employee.setHireDate(LocalDate.parse(results.getString("hire_date")));
@@ -96,16 +100,17 @@ public class JDBCEmployeeDAO implements EmployeeDAO {
 	@Override
 	public List<Employee> getEmployeesByProjectId(Long projectId) {
 		List<Employee> employeeList = new ArrayList<>();
-		String sqlFindAllEmployees = 	"SELECT first_name, last_name, employee_id, birth_date, gender, hire_date " +
+		String sqlFindAllEmployees = 	"SELECT employee_id, department_id, first_name, last_name, birth_date, gender, hire_date " +
 										"FROM employee " +
 										"JOIN project_employee USING(employee_id) " +
 										"WHERE project_id = ?";
 		SqlRowSet results = jdbcTemplate.queryForRowSet(sqlFindAllEmployees, projectId);
 		while(results.next()) {
 			Employee employee = new Employee();
+			employee.setId(results.getLong("employee_id"));
+			employee.setDepartmentId(results.getLong("department_id"));
 			employee.setFirstName(results.getString("first_name"));
 			employee.setLastName(results.getString("last_name"));
-			employee.setId(results.getLong("employee_id"));
 			employee.setBirthDay(LocalDate.parse(results.getString("birth_date")));
 			employee.setGender(results.getString("gender").charAt(0));
 			employee.setHireDate(LocalDate.parse(results.getString("hire_date")));
