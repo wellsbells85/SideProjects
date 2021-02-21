@@ -108,10 +108,6 @@ public class JDBCDepartmentDAOTest {
 		theDepartment.setName(name);
 		return theDepartment;
 	}
-//	
-//	private void assertDepartmentsAreEqual(Department expected, Department actual) {
-//		Assert.assertEquals(expected.getId(), actual.getId());
-//		Assert.assertEquals(expected.getName(), actual.getName());
-//	}
+
 		
 } //end class

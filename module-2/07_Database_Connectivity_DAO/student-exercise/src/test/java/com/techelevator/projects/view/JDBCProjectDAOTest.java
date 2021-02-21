@@ -21,8 +21,8 @@ public class JDBCProjectDAOTest {
 	
 	private static SingleConnectionDataSource dataSource;
 	private JDBCProjectDAO dao;
-	private static final Long PROJECT_ID = Long.valueOf(2);
-	private static final Long EMPLOYEE_ID = Long.valueOf(12);
+//	private static final Long PROJECT_ID = Long.valueOf(2);	These were to be used for adding and removing from projects
+//	private static final Long EMPLOYEE_ID = Long.valueOf(12); However, I don't know how to very the data since it's in another table
 	
 	@BeforeClass
 	public static void setupDataSource() {
@@ -56,7 +56,7 @@ public class JDBCProjectDAOTest {
 	
 	@Test
 	public void test_add_employee_and_remove_employee_from_test() {
-		//don't know how to use Mockito to test void methods yet
+		//don't know how to use Mockito to test methods like this yet
 	}
 	
 	
