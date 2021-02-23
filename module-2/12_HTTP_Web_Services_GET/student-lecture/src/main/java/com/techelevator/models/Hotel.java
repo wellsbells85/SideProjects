@@ -8,11 +8,7 @@ public class Hotel {
     private int roomsAvailable;
     private String coverImage;
 
-    public Hotel() {
-
-    }
-
-    public int getId() {
+     public int getId() {
         return id;
     }
 
@@ -34,7 +30,7 @@ public class Hotel {
 
     @Override
     public String toString() {
-        return "\n--------------------------------------------" +
+        return 	"\n--------------------------------------------" +
                 "\n Hotel Details" +
                 "\n--------------------------------------------" +
                 "\n Id: " + id +
