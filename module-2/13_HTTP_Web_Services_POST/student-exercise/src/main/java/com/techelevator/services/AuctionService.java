@@ -66,18 +66,45 @@ public class AuctionService {
     }
 
     public Auction add(String auctionString) {
-        // place code here
-        return null;
+    	Auction newAuction = makeAuction(auctionString);
+    	HttpEntity<Auction> entity = makeEntity(newAuction);
+    	try {
+            return restTemplate.postForObject(API_URL, entity, Auction.class);
+        } catch (RestClientResponseException ex) {
+            console.printError("No auctions found. Please try again.");
+            return null;
+        } catch (ResourceAccessException ex) {
+            console.printError("A network error occurred.");
+            return null; 
+        }
     }
 
     public Auction update(String auctionString) {
-        // place code here
-        return null;
+    	Auction modifyAuction = makeAuction(auctionString);
+    	HttpEntity<Auction> entity = makeEntity(modifyAuction);
+    	try {
+            restTemplate.put(API_URL + "/" + modifyAuction.getId(), entity);
+        } catch (RestClientResponseException ex) {
+            console.printError("No auctions found. Please try again.");
+            return null;
+        } catch (ResourceAccessException ex) {
+            console.printError("A network error occurred.");
+            return null; 
+        }
+    	return modifyAuction;
     }
 
     public boolean delete(int id) {
-    	// place code here
-    	return false; 
+    	try {
+            restTemplate.delete(API_URL + "/" + id);
+            return true;
+        } catch (RestClientResponseException ex) {
+            console.printError("No auctions found. Please try again.");
+            return false;
+        } catch (ResourceAccessException ex) {
+            console.printError("A network error occurred.");
+            return false; 
+        }
     }
 
     private HttpEntity<Auction> makeEntity(Auction auction) {
