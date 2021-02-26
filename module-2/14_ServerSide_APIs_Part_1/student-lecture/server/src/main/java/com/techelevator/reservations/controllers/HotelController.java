@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+@RestController
 public class HotelController {
 
     private HotelDAO hotelDAO;
@@ -39,6 +40,17 @@ public class HotelController {
     @RequestMapping(path = "/hotels/{id}", method = RequestMethod.GET)
     public Hotel get(@PathVariable int id) {
         return hotelDAO.get(id);
+    }
+    
+    /**
+     * Return all reservations in the system
+     *
+     * @param 
+     * @return all reservations
+     */
+    @RequestMapping(path = "/reservations", method = RequestMethod.GET)
+    public List<Reservation> getAllReservations() {
+    	return reservationDAO.findAll();
     }
 
 }

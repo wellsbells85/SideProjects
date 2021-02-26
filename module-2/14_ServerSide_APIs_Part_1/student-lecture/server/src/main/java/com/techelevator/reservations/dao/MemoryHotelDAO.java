@@ -42,7 +42,6 @@ public class MemoryHotelDAO implements HotelDAO {
         hotels.add(hotel);
     }
 
-
     private void setHotels() {
         hotels.add(new Hotel(1,
                 "Aloft Cleveland",
