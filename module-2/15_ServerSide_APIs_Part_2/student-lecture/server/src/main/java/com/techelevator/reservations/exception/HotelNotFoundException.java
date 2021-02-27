@@ -10,4 +10,8 @@ public class HotelNotFoundException extends Exception {
     public HotelNotFoundException() {
         super("Hotel not found.");
     }
+    
+    public HotelNotFoundException(String message) {
+    	super(message);
+    }
 }

@@ -36,6 +36,7 @@ public class MemoryAuctionDAO implements AuctionDAO {
         throw new AuctionNotFoundException();
     }
 
+    
     @Override
     public Auction create(Auction auction) {
         auction.setId(getMaxIdPlusOne());
