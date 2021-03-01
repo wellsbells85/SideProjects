@@ -204,14 +204,7 @@ public class Exercises {
 	 makeMiddle([1, 2]) → [1, 2]
 	 */
 	public int[] makeMiddle(int[] nums) {
-		int[] result = new int[2];
-		int size = nums.length;
-		if(size == 2) {
-			return nums;
-		} else {
-			result[0] = nums[ size / 2 - 1];
-			result[1] = nums[ size / 2];
-		} return result;
+		return new int[] {nums[(nums.length / 2 ) - 1] , nums[nums.length / 2 ] };
 	}
 
 	/*

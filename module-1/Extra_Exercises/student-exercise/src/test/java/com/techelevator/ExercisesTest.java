@@ -95,7 +95,6 @@ public class ExercisesTest {
         assertArrayEquals(new int[] { 1, 3 }, exercises.makeEnds(new int[] { 1, 2, 3 }));
         assertArrayEquals(new int[] { 1, 4 }, exercises.makeEnds(new int[] { 1, 2, 3, 4 }));
         assertArrayEquals(new int[] { 7, 2 }, exercises.makeEnds(new int[] { 7, 4, 6, 2 }));
-
         assertArrayEquals(new int[] { 1, 3 }, exercises.makeEnds(new int[] { 1, 2, 2, 2, 2, 2, 2, 3 }));
         assertArrayEquals(new int[] { 7, 4 }, exercises.makeEnds(new int[] { 7, 4 }));
         assertArrayEquals(new int[] { 7, 7 }, exercises.makeEnds(new int[] { 7 }));
@@ -114,7 +113,6 @@ public class ExercisesTest {
         assertEquals(true, exercises.has23(new int[] { 2, 5 }));
         assertEquals(true, exercises.has23(new int[] { 4, 3 }));
         assertEquals(false, exercises.has23(new int[] { 4, 5 }));
-
         assertEquals(true, exercises.has23(new int[] { 2, 2 }));
         assertEquals(true, exercises.has23(new int[] { 3, 2 }));
         assertEquals(true, exercises.has23(new int[] { 3, 3 }));
@@ -134,7 +132,6 @@ public class ExercisesTest {
         assertEquals(true, exercises.no23(new int[] { 4, 5 }));
         assertEquals(false, exercises.no23(new int[] { 4, 2 }));
         assertEquals(false, exercises.no23(new int[] { 3, 5 }));
-
         assertEquals(true, exercises.no23(new int[] { 1, 9 }));
         assertEquals(false, exercises.no23(new int[] { 2, 9 }));
         assertEquals(false, exercises.no23(new int[] { 1, 3 }));
@@ -156,7 +153,6 @@ public class ExercisesTest {
         assertArrayEquals(new int[] { 0, 0, 0, 0, 0, 6 }, exercises.makeLast(new int[] { 4, 5, 6 }));
         assertArrayEquals(new int[] { 0, 0, 0, 2 }, exercises.makeLast(new int[] { 1, 2 }));
         assertArrayEquals(new int[] { 0, 3 }, exercises.makeLast(new int[] { 3 }));
-
         assertArrayEquals(new int[] { 0, 0 }, exercises.makeLast(new int[] { 0 }));
         assertArrayEquals(new int[] { 0, 0, 0, 0, 0, 7 }, exercises.makeLast(new int[] { 7, 7, 7 }));
         assertArrayEquals(new int[] { 0, 0, 0, 0, 0, 4 }, exercises.makeLast(new int[] { 3, 1, 4 }));
@@ -176,7 +172,6 @@ public class ExercisesTest {
         assertEquals(true, exercises.double23(new int[] { 2, 2 }));
         assertEquals(true, exercises.double23(new int[] { 3, 3 }));
         assertEquals(false, exercises.double23(new int[] { 2, 3 }));
-
         assertEquals(false, exercises.double23(new int[] { 3, 2 }));
         assertEquals(false, exercises.double23(new int[] { 4, 5 }));
         assertEquals(false, exercises.double23(new int[] { 2 }));
@@ -196,7 +191,6 @@ public class ExercisesTest {
         assertArrayEquals(new int[] { 1, 2, 0 }, exercises.fix23(new int[] { 1, 2, 3 }));
         assertArrayEquals(new int[] { 2, 0, 5 }, exercises.fix23(new int[] { 2, 3, 5 }));
         assertArrayEquals(new int[] { 1, 2, 1 }, exercises.fix23(new int[] { 1, 2, 1 }));
-
         assertArrayEquals(new int[] { 3, 2, 1 }, exercises.fix23(new int[] { 3, 2, 1 }));
         assertArrayEquals(new int[] { 2, 2, 0 }, exercises.fix23(new int[] { 2, 2, 3 }));
         assertArrayEquals(new int[] { 2, 0, 3 }, exercises.fix23(new int[] { 2, 3, 3 }));
@@ -213,7 +207,6 @@ public class ExercisesTest {
         assertEquals(2, exercises.start1(new int[] { 1, 2, 3 }, new int[] { 1, 3 }));
         assertEquals(1, exercises.start1(new int[] { 7, 2, 3 }, new int[] { 1 }));
         assertEquals(1, exercises.start1(new int[] { 1, 2 }, new int[] {}));
-
         assertEquals(1, exercises.start1(new int[] {}, new int[] { 1, 2 }));
         assertEquals(0, exercises.start1(new int[] { 7 }, new int[] {}));
         assertEquals(1, exercises.start1(new int[] { 7 }, new int[] { 1 }));
@@ -233,7 +226,6 @@ public class ExercisesTest {
         assertArrayEquals(new int[] { 3, 4 }, exercises.biggerTwo(new int[] { 1, 2 }, new int[] { 3, 4 }));
         assertArrayEquals(new int[] { 3, 4 }, exercises.biggerTwo(new int[] { 3, 4 }, new int[] { 1, 2 }));
         assertArrayEquals(new int[] { 1, 2 }, exercises.biggerTwo(new int[] { 1, 1 }, new int[] { 1, 2 }));
-
         assertArrayEquals(new int[] { 2, 1 }, exercises.biggerTwo(new int[] { 2, 1 }, new int[] { 1, 1 }));
         assertArrayEquals(new int[] { 2, 2 }, exercises.biggerTwo(new int[] { 2, 2 }, new int[] { 1, 3 }));
         assertArrayEquals(new int[] { 1, 3 }, exercises.biggerTwo(new int[] { 1, 3 }, new int[] { 2, 2 }));
@@ -251,7 +243,6 @@ public class ExercisesTest {
         assertArrayEquals(new int[] { 2, 3 }, exercises.makeMiddle(new int[] { 1, 2, 3, 4 }));
         assertArrayEquals(new int[] { 2, 3 }, exercises.makeMiddle(new int[] { 7, 1, 2, 3, 4, 9 }));
         assertArrayEquals(new int[] { 1, 2 }, exercises.makeMiddle(new int[] { 1, 2 }));
-
         assertArrayEquals(new int[] { 2, 4 }, exercises.makeMiddle(new int[] { 5, 2, 4, 7 }));
         assertArrayEquals(new int[] { 4, 3 }, exercises.makeMiddle(new int[] { 9, 0, 4, 3, 9, 1 }));
 
@@ -279,7 +270,6 @@ public class ExercisesTest {
         assertArrayEquals(new int[] { 4, 2, 3, 1 }, exercises.swapEnds(new int[] { 1, 2, 3, 4 }));
         assertArrayEquals(new int[] { 3, 2, 1 }, exercises.swapEnds(new int[] { 1, 2, 3 }));
         assertArrayEquals(new int[] { 5, 6, 7, 9, 8 }, exercises.swapEnds(new int[] { 8, 6, 7, 9, 5 }));
-
         assertArrayEquals(new int[] { 9, 1, 4, 1, 5, 3 }, exercises.swapEnds(new int[] { 3, 1, 4, 1, 5, 9 }));
         assertArrayEquals(new int[] { 1, 2 }, exercises.swapEnds(new int[] { 2, 1 }));
         assertArrayEquals(new int[] { 1 }, exercises.swapEnds(new int[] { 1 }));
@@ -296,7 +286,6 @@ public class ExercisesTest {
         assertEquals(true, exercises.more14(new int[] { 1, 4, 1 }));
         assertEquals(false, exercises.more14(new int[] { 1, 4, 1, 4 }));
         assertEquals(true, exercises.more14(new int[] { 1, 1 }));
-
         assertEquals(true, exercises.more14(new int[] { 1, 6, 6 }));
         assertEquals(true, exercises.more14(new int[] { 1 }));
         assertEquals(false, exercises.more14(new int[] { 1, 4 }));
@@ -321,7 +310,6 @@ public class ExercisesTest {
         assertArrayEquals(new int[] { 0, 1, 2, 3 }, exercises.fizzArray(4));
         assertArrayEquals(new int[] { 0 }, exercises.fizzArray(1));
         assertArrayEquals(new int[] { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 }, exercises.fizzArray(10));
-
         assertArrayEquals(new int[] {}, exercises.fizzArray(0));
         assertArrayEquals(new int[] { 0, 1 }, exercises.fizzArray(2));
         assertArrayEquals(new int[] { 0, 1, 2, 3, 4, 5, 6 }, exercises.fizzArray(7));
@@ -338,7 +326,6 @@ public class ExercisesTest {
         assertEquals(true, exercises.only14(new int[] { 1, 4, 1, 4 }));
         assertEquals(false, exercises.only14(new int[] { 1, 4, 2, 4 }));
         assertEquals(true, exercises.only14(new int[] { 1, 1 }));
-
         assertEquals(true, exercises.only14(new int[] { 4, 1 }));
         assertEquals(false, exercises.only14(new int[] { 2 }));
         assertEquals(true, exercises.only14(new int[] {}));
@@ -390,12 +377,10 @@ public class ExercisesTest {
      */
     @Test
     public void fizzArray3() {
-
         areEqual(new int[] { 5, 6, 7, 8, 9 }, exercises.fizzArray3(5, 10), "fizzArray3(5, 10)");
         areEqual(new int[] { 11, 12, 13, 14, 15, 16, 17 }, exercises.fizzArray3(11, 18), "fizzArray3(11, 18)");
         areEqual(new int[] { 1, 2 }, exercises.fizzArray3(1, 3), "fizzArray3(1, 3)");
         areEqual(new int[] {}, exercises.fizzArray3(3, 3), "fizzArray3(3, 3)");
-
     }
 
     /*
