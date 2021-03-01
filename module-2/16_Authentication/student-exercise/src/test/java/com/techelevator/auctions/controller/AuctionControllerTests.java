@@ -140,7 +140,7 @@ public class AuctionControllerTests {
         mvc.perform(delete("/auctions/2")
                 .contentType(MediaType.APPLICATION_JSON)
                 .header("Authorization", "Bearer " + creatorToken))
-                .andExpect(status().isNoContent());
+                .andExpect(status().isForbidden());
     }
 
     @Test
