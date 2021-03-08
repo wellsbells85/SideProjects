@@ -1,0 +1,34 @@
+body {
+    background-color: lightgrey;
+}
+label {
+    font-weight: bold;
+}
+
+input {
+   margin-bottom: 10px;
+   width: 175px;
+}
+
+.check {
+    width:min-content;
+}
+
+.number {
+    width: 50px;
+    margin-bottom: 10px;
+}
+
+.color {
+    width: 70px;
+}
+
+.submit {
+    width: 80px;
+    height: 40px;
+    font-size: larger;
+    font-weight: bold;
+    background-color:darkorange;
+}
+
+
