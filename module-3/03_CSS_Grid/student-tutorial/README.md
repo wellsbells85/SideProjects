@@ -199,7 +199,7 @@ The final responsive portion of the file should look like this:
     }
 
     main h3 {
-        text-align: center;
+        text-align: justify;
         margin: 0;
     }
 
