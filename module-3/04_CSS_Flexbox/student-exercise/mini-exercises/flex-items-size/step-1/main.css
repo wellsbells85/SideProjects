@@ -7,6 +7,8 @@ body {
 
 .container {
   background-color: #F0F0F0;
+  display: flex;
+  justify-content: stretch;
 }
 
 .box {
@@ -16,4 +18,5 @@ body {
   color: #fff;
   text-align: center;
   border: solid 1px #777;
+  flex-grow: 1;
 }

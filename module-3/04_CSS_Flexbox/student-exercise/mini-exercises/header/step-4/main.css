@@ -43,7 +43,7 @@ li a:hover {
 
 .spacer {
   display: flex;
-  flex-grow: 100;
+  flex-grow: 1;
 }
 
 .my-account img {
