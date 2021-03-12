@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.techelevator</groupId>
-	<artifactId>m03-44-Selenium</artifactId>
+	<artifactId>m03d05-selenium</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>44-Selenium</name>
 	<description>Automated Functional Testing With Selenium</description>
