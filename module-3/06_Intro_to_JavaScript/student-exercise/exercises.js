@@ -19,7 +19,17 @@
  * @param {boolean} [recommendation=false] does the student have a recommendation
  * @returns {boolean} true if they are admitted
  */
-
+function isAdmitted(gpa, satScore = 0, recommendation = false) {
+    if(gpa > 4.0 || satScore > 1300) {
+        return true;
+    } else if(gpa > 3.0 && recommendation == true) { 
+        return true;
+    } else if(satScore > 1200 && recommendation == true) {
+        return true;
+    } else {
+        return false;
+    }   
+}
 /**
  * Write a function called useParameterToFilterArray that takes an anonymous
  * function and uses that in the `unfilteredArray` filter function. Return the result.
@@ -28,6 +38,10 @@
  * @returns {number[]} the filtered array
  */
 let unfilteredArray = [1, 2, 3, 4, 5, 6];
+
+function useParameterToFilterArray(filterFunction) {
+
+}
 
 /**
  * Write a function called makeNumber that takes two strings

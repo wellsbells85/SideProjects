@@ -10,8 +10,14 @@
  */
 function variables() {
   // Declares a variable where the value cannot be changed
-  // Declares a variable those value can be changed
+  // * Don't use var!
+  const daysInAWeek = 7; // Same as a Java Final variable
+  // Declares a variable whose value can be changed
+  let x = "Monday" // All variables are mutable
   // Declares a variable that will always be an array
+  const days = ["M", "T", "W"];
+  days[0] = "S";
+  // days = "Tom"; this will cause a compiler error
 }
 
 /**
