@@ -16,9 +16,20 @@ function returnOne() {
  *
  * @param {any} value the value to print to the console
  */
-function printToConsole(value) {
-  console.log(value);
-}
+    function printToConsole(value) {
+      console.log(value);
+    }
+
+    function demo() {
+      let x = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
+      // x.forEach(numb => console.log(numb % 2 === 0 ? "Even!" : "Odd!"));
+
+      // let newX = x.map(numb => numb * numb); 
+
+      // let filteredX = x.filter(numb => numb % 3 === 0);
+
+    }
+
 
 /**
  * Write a function called multiplyTogether that multiplies two numbers together. But 
@@ -27,6 +38,9 @@ function printToConsole(value) {
  * @param {number} firstParameter the first parameter to multiply
  * @param {number} secondParameter the second parameter to multiply
  */
+    function multiplyTogether(firstParameter, secondParameter) {
+      return firstParameter * secondParameter;
+    }
 
 /**
  * This version makes sure that no parameters are ever missing. If
@@ -38,7 +52,9 @@ function printToConsole(value) {
  * @param {number} [firstParameter=0] the first parameter to multiply
  * @param {number} [secondParameter=0] the second parameter to multiply
  */
-
+ function multiplyNoUndefined(firstParameter = 0, secondParameter = 0) {
+  return firstParameter * secondParameter;
+}
 
  
 /**
@@ -87,10 +103,13 @@ function scopeTest() {
   }
 }
 
-function createSentenceFromUser(name, age, listOfQuirks = [], separator = ', ') {
-  let description = `${name} is currently ${age} years old. Their quirks are: `;
-  return description + listOfQuirks.join(separator);
-}
+  function createSentenceFromUser(name, age, listOfQuirks = [], separator = ', ') {
+    let description = `${name} is currently ${age} years old. `;
+    if(listOfQuirks.length > 0) {
+      description += "Their quirks are: " + listOfQuirks.join(separator);
+    }
+    return description ;
+  }
 
 /**
  * Takes an array and, using the power of anonymous functions, generates
@@ -99,9 +118,11 @@ function createSentenceFromUser(name, age, listOfQuirks = [], separator = ', ') 
  * @param {number[]} numbersToSum numbers to add up
  * @returns {number} sum of all the numbers
  */
-function sumAllNumbers(numbersToSum) {
-  return numbersToSum.reduce();
-}
+  function sumAllNumbers(numbersToSum = []) {
+    return numbersToSum.reduce((reducer, number) => {
+      return reducer + number;
+    }, 0);
+  }
 
 /**
  * Takes an array and returns a new array of only numbers that are
@@ -111,4 +132,6 @@ function sumAllNumbers(numbersToSum) {
  * @returns {number[]} a new array with only those numbers that are
  *   multiples of 3
  */
-function allDivisibleByThree(numbersToFilter) {}
+function allDivisibleByThree(numbersToFilter) {
+  return numbersToFilter.filter(num => num%3 === 0);
+}
