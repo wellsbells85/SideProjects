@@ -37,11 +37,13 @@ function isAdmitted(gpa, satScore = 0, recommendation = false) {
  * @param {function} filterFunction the function to filter with
  * @returns {number[]} the filtered array
  */
-let unfilteredArray = [1, 2, 3, 4, 5, 6];
+    // let unfilteredArray = [1, 2, 3, 4, 5, 6];
 
-function useParameterToFilterArray(filterFunction) {
-
-}
+    // function useParameterToFilterArray(filterFunction) { 
+    //     let number = unfilteredArray.filterFunction( element => {
+    //         return element % 2 === 0;
+    //     });
+    // }    
 
 /**
  * Write a function called makeNumber that takes two strings
@@ -55,6 +57,10 @@ function useParameterToFilterArray(filterFunction) {
  * @param {string} [second=''] the second string of digits to concatenate
  * @returns {number} the resultant number
  */
+    function makeNumber(first, second = '') {
+        number = first + second;
+        return Number.parseInt(number);
+    }
 
 /**
  * Write a function called addAll that takes an unknown number of parameters
@@ -63,6 +69,13 @@ function useParameterToFilterArray(filterFunction) {
  * @param {...number} num a series of numbers to add together
  * @returns {number} the sum of all the parameters (or arguments)
  */
+    function addAll(num) {
+        let number = 0;
+        for(let value in num) {
+            number += Number.parseInt(value);
+        }        
+        return number;
+    }
 
 /*
  * Write and document a function called makeHappy that takes
