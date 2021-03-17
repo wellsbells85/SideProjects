@@ -118,9 +118,12 @@ function isAdmitted(gpa, satScore = 0, recommendation = false) {
  * @returns {string[]} string array with addresses
  */
     function getFullAddressesOfProperties(jso = []) {
-        let mail = jso.map(key => key);
-
+        jso.reduce((reducer, key) => {
+            return reducer + " " + key;
+        }, "");
     }
+    jso.map(x => {return getFullAddressesOfProperties(jso = [])});
+    
 
 /*
  * Write and document a function called findLargest.

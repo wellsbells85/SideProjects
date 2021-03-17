@@ -1,4 +1,4 @@
-const name = 'Cigar Parties for Dummies';
+const pageTitle = 'Cigar Parties for Dummies';
 const description = 'Host and plan the perfect cigar party for all of your squirrelly friends.';
 const reviews = [
   {
@@ -36,19 +36,42 @@ const reviews = [
  * Get our page page title by the id and the query the .name selector
  * once you have the element you can add the product name to the span.
  */
-function setPageTitle() {}
+function setPageTitle() {
+  // document object => DOM
+  // querySelector allows us to find things inside the DOM
+                            //# -> id, . -> class, text -> HTML Tag, etc.
+  document.querySelector('.name').innerText = pageTitle; 
+}
 
 /**
  * Add our product description to the page.
  */
-function setPageDescription() {}
+function setPageDescription() {
+  document.querySelector('.description').innerText = description;
+}
 
 /**
  * I will display all of the reviews on the page.
  * I will loop over the array of reviews and use some helper functions
  * to create the elements needed for our markup and add them to the DOM
  */
-function displayReviews() {}
+function displayReviews() {
+  // Find the parent
+  const mainDiv = document.getElementById('main');
+
+  // Grab some data
+  reviews.forEach((r) => {
+    // Create a new Web Element
+    const newDiv = document.createElement('div');
+
+    // Put some text into element
+    newDiv.innerHTML = `Reviewer:  ${r.reviewer}, Stars: ${r.rating}`;
+
+    // Add new element to the DOM
+    mainDiv.appendChild(newDiv);
+  });
+
+}
 
 /**
  * I will creating a new h4 element with the name of the reviewer and append it to
