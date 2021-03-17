@@ -37,13 +37,10 @@ function isAdmitted(gpa, satScore = 0, recommendation = false) {
  * @param {function} filterFunction the function to filter with
  * @returns {number[]} the filtered array
  */
-    // let unfilteredArray = [1, 2, 3, 4, 5, 6];
-
-    // function useParameterToFilterArray(filterFunction) { 
-    //     let number = unfilteredArray.filterFunction( element => {
-    //         return element % 2 === 0;
-    //     });
-    // }    
+    let unfilteredArray = [1, 2, 3, 4, 5, 6];   
+    function useParameterToFilterArray(filterFunction) {
+        return unfilteredArray.filter(filterFunction);
+    }    
 
 /**
  * Write a function called makeNumber that takes two strings
@@ -69,11 +66,11 @@ function isAdmitted(gpa, satScore = 0, recommendation = false) {
  * @param {...number} num a series of numbers to add together
  * @returns {number} the sum of all the parameters (or arguments)
  */
-    function addAll(num) {
+    function addAll() {
         let number = 0;
-        for(let value in num) {
-            number += Number.parseInt(value);
-        }        
+        for(i = 0; i < arguments.length; i++ ){
+            number += arguments[i];
+        }
         return number;
     }
 
@@ -82,6 +79,17 @@ function isAdmitted(gpa, satScore = 0, recommendation = false) {
  * an array and prepends 'Happy ' to the beginning of all the
  * words and returns them as a new array. Use the `map` function.
  */
+
+/**
+ * Takes in an array of words, and prepends 'Happy ' to 
+ * each word. Then maps to a new array and returns that array.
+ * 
+ * @param {string[]} words string array of random words
+ * @returns {string[]} string array with modified words
+ */
+    function makeHappy(words = []) {
+        return words.map(word => "Happy " + word);      
+    }
 
 /*
  * Write and document a function called getFullAddressesOfProperties
@@ -101,12 +109,43 @@ function isAdmitted(gpa, satScore = 0, recommendation = false) {
  * Use `map` and an anonymous function.
  */
 
+/**
+ * Takes in an array of JS Objects. Pulls the keys from the 
+ * objects to build a string of addresses. Puts the formatted
+ * addressed into a new array.
+ * 
+ * @param {JSON[]} array of keyed address objects
+ * @returns {string[]} string array with addresses
+ */
+    function getFullAddressesOfProperties(jso = []) {
+        let mail = jso.map(key => key);
+
+    }
+
 /*
  * Write and document a function called findLargest.
  *
  * Using `forEach`, find the largest element in an array.
  * It must work for strings and numbers.
  */
+
+/**
+ * Takes in an array of objects. Returns the largest number
+ * or string.
+ * 
+ * @param {[]} array of string or numbers
+ * @returns {string} {number} returns either the largest
+ * string or the largest number
+ */
+    function findLargest(array = []) {
+        let large = "";
+        array.forEach(x => {
+            if(x > large){
+                large = x;
+            }
+        });
+        return large;
+    }
 
 /*
  * CHALLENGE

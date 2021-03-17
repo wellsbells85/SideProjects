@@ -118,11 +118,11 @@ function scopeTest() {
  * @param {number[]} numbersToSum numbers to add up
  * @returns {number} sum of all the numbers
  */
-  function sumAllNumbers(numbersToSum = []) {
-    return numbersToSum.reduce((reducer, number) => {
-      return reducer + number;
-    }, 0);
-  }
+    function sumAllNumbers(numbersToSum = []) {
+      return numbersToSum.reduce((reducer, number) => {
+        return reducer + number;
+      }, 0);
+    }
 
 /**
  * Takes an array and returns a new array of only numbers that are
