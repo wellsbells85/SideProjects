@@ -117,12 +117,13 @@ function isAdmitted(gpa, satScore = 0, recommendation = false) {
  * @param {JSON[]} array of keyed address objects
  * @returns {string[]} string array with addresses
  */
-    function getFullAddressesOfProperties(jso = []) {
-        jso.reduce((reducer, key) => {
-            return reducer + " " + key;
-        }, "");
+    function getFullAddressesOfProperties(jso) {
+        return jso.map(value => {
+            return value.streetNumber + ' ' + value.streetName + ' ' + value.streetType 
+            + ' ' + value.city + ' ' + value.state + ' ' + value.zip;
+        });
     }
-    jso.map(x => {return getFullAddressesOfProperties(jso = [])});
+  
     
 
 /*
