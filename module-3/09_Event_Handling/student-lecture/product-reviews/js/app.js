@@ -1,4 +1,4 @@
-const name = 'Cigar Parties for Dummies';
+const bookName = 'Cigar Parties for Dummies';
 let description = 'Host and plan the perfect cigar party for all of your squirrelly friends.';
 let reviews = [
   {
@@ -17,7 +17,7 @@ let reviews = [
  */
 function setPageTitle() {
   const pageTitle = document.getElementById('page-title');
-  pageTitle.querySelector('.name').innerHTML = name;
+  pageTitle.querySelector('.name').innerHTML = bookName;
 }
 
 /**
@@ -59,13 +59,43 @@ function displayReview(review) {
 }
 
 // LECTURE STARTS HERE ---------------------------------------------------------------
+  document.addEventListener('DOMContentLoaded', () => {
+    // set the product reviews page title
+    setPageTitle();
+    // set the product reviews page description
+    setPageDescription();
+    // display all of the product reviews on our page
+    displayReviews();
 
-// set the product reviews page title
-setPageTitle();
-// set the product reviews page description
-setPageDescription();
-// display all of the product reviews on our page
-displayReviews();
+    // 1. FIND THE ELEMENT
+    // 2. DEFINE THE EVENT
+    // 3. DEFINE THE FUNCTION
+    const addReviewButton = document.getElementById('btnToggleForm');
+    addReviewButton.addEventListener('click', () => {
+      showHideForm();
+    });
+    
+    const saveReviewButton = document.getElementById('btnSaveReview');
+    saveReviewButton.addEventListener('click', (e) => {
+      e.preventDefault();
+      const newName = document.getElementsById('name').value;
+      const newTitle = document.getElementById('title').value;
+      const newRating = document.getElementById('rating').value;
+      const newReview = document.getElementById('review').value;
+
+      const newWholeReview = {
+        reviewer: newName,
+        title: newTitle,
+        rating: newRating,
+        review: newReview
+      };
+
+      reviews.push(newWholeReview);
+      displayReviews();
+    });
+
+  });
+
 
 /**
  * Take an event on the description and swap out the description for a text box.
