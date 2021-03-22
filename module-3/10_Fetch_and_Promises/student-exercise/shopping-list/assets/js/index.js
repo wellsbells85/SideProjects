@@ -11,7 +11,6 @@ document.addEventListener('DOMContentLoaded', () => {
         .then((data) => {
             ul.innerText = '';
             data.forEach((item) => {
-                console.log(item);
                 const clone = template.content.cloneNode(true);
                 const li = clone.querySelector('li');
                 const i = clone.querySelector('i');
