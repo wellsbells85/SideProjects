@@ -1,19 +1,53 @@
 <template>
     <div class="todo-list">
+        <input type="text" v-model="filterText" />
         <h1>My Daily Routine</h1>
         <ul>
-            <li>Wake Up</li>
-            <li>5 Minute Morning Movement</li>
-            <li>Meditate</li>
-            <li>Brush Teeth</li>
-            <li>Shower</li>
+            <li v-for="todo in filteredTodos" v-bind:key="todo.name" v-bind:class="{ finished: todo.done }">
+                <input type="checkbox" v-model="todo.done" />
+                {{ todo.name }}
+            </li>       
         </ul>
     </div>
 </template>
 
 <script>
 export default {
-
+    data() {
+        return {
+            filterText: '',
+            todos: [
+                { 
+                    name: 'Wake up',
+                    done: false
+                },
+                {
+                    name: '5 Minute Morning Movement',
+                    done: false
+                },
+                {
+                    name: 'Meditate',
+                    done: false
+                },
+                {
+                    name: 'Brush Teeth',
+                    done: false
+                },
+                {
+                    name: 'Shower',
+                    done: false
+                }
+            ]
+        }
+    },
+    computed: {
+        filteredTodos() {
+            return this.todos.filter((todo) => {
+                return todo.name.includes(this.filterText);
+            });
+        }
+    }
+    
 }
 </script>
 
@@ -48,5 +82,14 @@ li {
 }
 li:last-child{
     border:0px;
+}
+.finished {
+    background-color: grey;
+}
+input[type=text] {
+  width: 75%;
+  margin: auto;
+  font-size: 2em;
+  display:block;
 }
 </style>
