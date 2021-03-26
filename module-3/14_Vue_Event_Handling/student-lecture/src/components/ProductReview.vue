@@ -63,7 +63,7 @@
     </div>
 
     <a href="#" v-on:click.prevent="formToggle">Show Form</a>
-    <form v-if="showForm === false">
+    <form v-if="showForm === true">
       <div class="form-element">
           <label for="reviewer">Name:</label>
           <input id="reviewer" type="text" v-model="newReview.reviewer" />
