@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <todo-summary />
     <todo-list />
     <new-todo />
   </div>
@@ -8,12 +9,14 @@
 <script>
 import TodoList from './components/TodoList.vue';
 import NewTodo from './components/NewTodo.vue';
+import TodoSummary from './components/TodoSummary.vue';
 
 export default {
   name: 'app',
   components: {
     TodoList,
-    NewTodo
+    NewTodo,
+    TodoSummary
   }
 }
 </script>

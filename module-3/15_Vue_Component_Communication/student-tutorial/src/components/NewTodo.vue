@@ -1,6 +1,6 @@
 <template>
   <section class="new-todo">
-    <form>
+    <form v-on:submit.prevent="saveTodo">
       <input type="text" placeholder="Name" v-model="newTodo.name">
       <select v-model="newTodo.category">
         <option value="">--- Select a category ---</option>
