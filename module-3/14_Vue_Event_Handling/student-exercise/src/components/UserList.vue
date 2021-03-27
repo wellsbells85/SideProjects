@@ -15,7 +15,7 @@
       <tbody>
         <tr>
           <td>
-            <input type="checkbox" id="selectAll" @click="toggleAll" v-model="selectAll" />
+            <input type="checkbox" id="selectAll" @click="toggleAll" v-model="isSelectAll" />
           </td>
           <td>
             <input type="text" id="firstNameFilter" v-model="filter.firstName" />
@@ -161,7 +161,7 @@ export default {
         }
       ],
       selectedUserIDs: [],
-      selectAll: false 
+      isSelectAll: false 
     };
   },
   methods: {
@@ -204,8 +204,8 @@ export default {
     },
     toggleAll() {
       this.selectedUserIDs = [];
-      this.selectAll = !this.selectAll;
-      if(this.selectAll) {
+      this.isSelectAll = !this.isSelectAll;
+      if(this.isSelectAll) {
         this.users.forEach((user) => {
           this.selectedUserIDs.push(user.id);
         });
@@ -213,9 +213,9 @@ export default {
     },
     updateSelectAll() {
       if(this.selectedUserIDs.length === this.users.length) {
-        this.selectAll = true;
+        this.isSelectAll = true;
       } else {
-        this.selectAll = false;
+        this.isSelectAll = false;
       }
     }  
   },
