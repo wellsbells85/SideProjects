@@ -213,9 +213,9 @@ export default {
     },
     updateSelectAll() {
       if(this.selectedUserIDs.length === this.users.length) {
-        this.isSelectAll = true;
+        this.selectAll = true;
       } else {
-        this.isSelectAll = false;
+        this.selectAll = false;
       }
     }  
   },
