@@ -1,11 +1,11 @@
 <template>
   <form class="new-book-form" v-on:submit.prevent="addNewBook">
     <label for="title" >Title</label>
-    <input type="text" id="title" v-model="newBook.title" placeholder="Please Enter the Book Title" required size="40"/><br>
+    <input class="title-input" type="text" id="title" v-model="newBook.title" placeholder="Please Enter the Book Title" required size="40"/><br>
     <label for="author" >Author</label>
-    <input type="text" id="author" v-model="newBook.author" placeholder="Please Enter the Author" required size="40"/><br>
+    <input class="author-input" type="text" id="author" v-model="newBook.author" placeholder="Please Enter the Author" required size="40"/><br>
     <label for="isbn" >ISBN</label>
-    <input type="text" id="isbn" v-model="newBook.isbn" placeholder="Please Enter 13-Digit ISBN" required minlength="13" maxlength="13" size="40"/><br>
+    <input class="isbn-input" type="text" id="isbn" v-model="newBook.isbn" placeholder="Please Enter 13-Digit ISBN" required minlength="13" maxlength="13" size="40"/><br>
     <input id="submit" type="submit" value="Save" />
     <input id="cancel" type="button" value="Cancel" v-on:click.prevent="resetForm" />
   </form>
@@ -17,7 +17,7 @@ export default {
   data() {
     return {
       newBook: {
-        read: false
+        read: true
       }
     };
   },
