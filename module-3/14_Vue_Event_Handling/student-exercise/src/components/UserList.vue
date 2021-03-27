@@ -15,7 +15,7 @@
       <tbody>
         <tr>
           <td>
-            <input type="checkbox" id="selectAll" />
+            <input type="checkbox" id="selectAll" @click="toggleAll" v-model="selectAll" />
           </td>
           <td>
             <input type="text" id="firstNameFilter" v-model="filter.firstName" />
@@ -44,7 +44,8 @@
           v-bind:class="{ disabled: user.status === 'Disabled' }"
         >
           <td>
-            <input type="checkbox" v-bind:id="user.id" v-bind:value="user.id" v-model="selectedUserIDs"/>
+            <input type="checkbox" v-bind:id="user.id" v-bind:value="user.id" 
+            v-model.number="selectedUserIDs" @change="updateSelectAll"/>
           </td>
           <td>{{ user.firstName }}</td>
           <td>{{ user.lastName }}</td>
@@ -52,7 +53,7 @@
           <td>{{ user.emailAddress }}</td>
           <td>{{ user.status }}</td>
           <td>
-            <button @click.prevent="flipStatus(user.id)" class="btnEnableDisable">{{user.status === 'Active' ? 'Disable':'Enable'}}</button>
+            <button @click="flipStatus(user.id)" class="btnEnableDisable">{{user.status === 'Active' ? 'Disable':'Enable'}}</button>
           </td>
         </tr>
       </tbody>
@@ -159,7 +160,8 @@ export default {
           status: "Disabled"
         }
       ],
-      selectedUserIDs: [] 
+      selectedUserIDs: [],
+      selectAll: false 
     };
   },
   methods: {
@@ -195,10 +197,27 @@ export default {
       });
     },
     deleteSelectedUsers() {
-      this.selectedUserIDs.forEach((id) => {
-        this.users.splice(id-1, id);
-      });
-    }
+      for(let i = 0; i < this.selectedUserIDs.length; i++){
+        this.users.filter(user => user.id === this.selectedUserIDs[i])
+        .forEach(user => this.users.splice(this.users.indexOf(user),1));
+      }
+    },
+    toggleAll() {
+      this.selectedUserIDs = [];
+      this.selectAll = !this.selectAll;
+      if(this.selectAll) {
+        this.users.forEach((user) => {
+          this.selectedUserIDs.push(user.id);
+        });
+      }
+    },
+    updateSelectAll() {
+      if(this.selectedUserIDs.length === this.users.length) {
+        this.isSelectAll = true;
+      } else {
+        this.isSelectAll = false;
+      }
+    }  
   },
   computed: {
     filteredList() {
