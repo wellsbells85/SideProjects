@@ -1,39 +1,32 @@
 <template>
-  <div>
-    <a
-      id="show-form-button"
-      href="#"
-      v-if="showForm === false"
-      v-on:click.prevent="showForm = true"
-    >Show Form</a>
-
-    <form v-on:submit.prevent="addNewReview" v-if="showForm === true">
-      <div class="form-element">
-        <label for="reviewer">Name:</label>
-        <input id="reviewer" type="text" v-model="newReview.reviewer" />
-      </div>
-      <div class="form-element">
-        <label for="title">Title:</label>
-        <input id="title" type="text" v-model="newReview.title" />
-      </div>
-      <div class="form-element">
-        <label for="rating">Rating:</label>
-        <select id="rating" v-model.number="newReview.rating">
-          <option value="1">1 Star</option>
-          <option value="2">2 Stars</option>
-          <option value="3">3 Stars</option>
-          <option value="4">4 Stars</option>
-          <option value="5">5 Stars</option>
-        </select>
-      </div>
-      <div class="form-element">
-        <label for="review">Review:</label>
-        <textarea id="review" v-model="newReview.review"></textarea>
-      </div>
-      <input type="submit" value="Save" />
-      <input type="button" value="Cancel" v-on:click.prevent="resetForm" />
-    </form>
-  </div>
+  <form v-on:submit.prevent="addNewReview">
+    <div class="form-element">
+      <label for="reviewer">Name:</label>
+      <input id="reviewer" type="text" v-model="newReview.reviewer" />
+    </div>
+    <div class="form-element">
+      <label for="title">Title:</label>
+      <input id="title" type="text" v-model="newReview.title" />
+    </div>
+    <div class="form-element">
+      <label for="rating">Rating:</label>
+      <select id="rating" v-model.number="newReview.rating">
+        <option value="1">1 Star</option>
+        <option value="2">2 Stars</option>
+        <option value="3">3 Stars</option>
+        <option value="4">4 Stars</option>
+        <option value="5">5 Stars</option>
+      </select>
+    </div>
+    <div class="form-element">
+      <label for="review">Review</label>
+      <textarea id="review" v-model="newReview.review"></textarea>
+    </div>
+    <div class="actions">
+      <button v-on:click.prevent="resetForm" type="cancel">Cancel</button>
+      <button>Submit</button>
+    </div>
+  </form>
 </template>
 
 <script>
@@ -41,46 +34,52 @@ export default {
   name: "add-review",
   data() {
     return {
-      showForm: false,
       newReview: {
-        favorited: false
+        id: 0,
+        reviewer: "",
+        title: "",
+        rating: 0,
+        review: ""
       }
     };
   },
   methods: {
     addNewReview() {
+      const productID = this.$route.params.id;
+      this.newReview.id = productID;
       this.$store.commit("ADD_REVIEW", this.newReview);
-      this.resetForm();
+      // TODO: send the visitor back to the product page to see the new review
+      this.$router.push({ name: "product-detail", params: { id: productID } });
     },
     resetForm() {
-      this.showForm = false;
       this.newReview = {};
     }
   }
 };
 </script>
 
-<style>
-div.form-element {
-  margin-top: 10px;
+<style scoped>
+form {
+  width: 500px;
+  margin: 20px;
 }
-div.form-element > label {
-  display: block;
-}
-div.form-element > input,
-div.form-element > select {
-  height: 30px;
-  width: 300px;
-}
-div.form-element > textarea {
-  height: 60px;
-  width: 300px;
-}
-form > input[type="button"] {
+.form-element label {
   width: 100px;
+  vertical-align: top;
 }
-form > input[type="submit"] {
-  width: 100px;
-  margin-right: 10px;
+.form-element input,
+select,
+textarea {
+  width: 400px;
+  font-size: 1.1rem;
+}
+.form-element textarea {
+  height: 150px;
+}
+.actions {
+  float: right;
+}
+.actions button {
+  margin-left: 10px;
 }
 </style>

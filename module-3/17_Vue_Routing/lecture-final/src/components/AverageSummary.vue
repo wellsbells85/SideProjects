@@ -15,11 +15,17 @@ export default {
   },
   computed: {
     averageRating() {
-      const reviews = this.$store.state.reviews;
+      const reviews = this.$store.state.products.find(
+        p => p.id == this.$store.state.activeProduct
+      ).reviews;
       let sum = reviews.reduce((currentSum, review) => {
         return currentSum + review.rating;
       }, 0);
-      return (sum / reviews.length).toFixed(2);
+      if (sum === 0) {
+        return 0;
+      } else {
+        return sum / reviews.length;
+      }
     }
   }
 };

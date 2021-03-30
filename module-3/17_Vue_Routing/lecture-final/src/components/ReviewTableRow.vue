@@ -1,5 +1,5 @@
 <template>
-  <tr v-bind:class="{ favorited: review.favorited }" >
+  <tr>
     <td>{{ review.title }}</td>
     <td nowrap>{{ review.reviewer }}</td>
     <td>{{ review.review }}</td>

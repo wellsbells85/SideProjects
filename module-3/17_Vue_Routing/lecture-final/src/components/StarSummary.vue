@@ -1,7 +1,7 @@
 <template>
   <div class="well">
-    <span class="amount" v-on:click="updateFilter()">{{ numberOfReviews }}</span>
-    {{ rating }} Star Review{{ numberOfReviews === 1 ? '' : 's' }}
+    <span class="amount" v-on:click="updateFilter()">{{ stars }}</span>
+    {{ rating }} Star Review{{ stars === 1 ? '' : 's' }}
   </div>
 </template>
 
@@ -15,8 +15,10 @@ export default {
     }
   },
   computed: {
-    numberOfReviews() {
-      const reviews = this.$store.state.reviews;
+    stars() {
+      const reviews = this.$store.state.products.find(
+        p => p.id == this.$store.state.activeProduct
+      ).reviews;
       return reviews.reduce((currentCount, review) => {
         return currentCount + (review.rating === parseInt(this.rating) ? 1 : 0);
       }, 0);
