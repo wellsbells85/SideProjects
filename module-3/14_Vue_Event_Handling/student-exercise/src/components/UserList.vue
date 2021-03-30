@@ -84,7 +84,7 @@
         <label for="emailAddress">Email Address:</label>
         <input type="text" name="emailAddress" v-model="newUser.emailAddress" />
       </div>
-      <button type="submit" class="btn save">Save User</button>
+      <button type="submit" class="btn save" v-on:click.prevent="saveUser" >Save User</button>
     </form>
   </div>
 </template>
