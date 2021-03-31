@@ -50,8 +50,15 @@ export default new Vuex.Store({
       {
         id: 2,
         name: "Personal Finance for Dummies",
-        description: "",
-        reviews: []
+        description: "How to Earn a Bunch of Money and Die Broke as a Joke",
+        reviews: [{
+          reviewer: 'Gary Vaynerchuk',
+          title: 'And I thought I could write',
+          review:
+            "There are a lot of good, solid tips in this book. I don't want to ruin it, but not putting my PIN on my card was very clever.",
+          rating: 3,
+          favorited: false
+        }]
       },
       {
         id: 3,

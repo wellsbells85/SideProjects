@@ -3,8 +3,8 @@
     <h1>{{ product.name }}</h1>
     <p class="description">{{ product.description }}</p>
     <div class="actions">
-      <a href="#">Back to Products</a>&nbsp;|
-      <a href="#">Add Review</a>
+      <router-link :to="{ name: 'products'} ">Back to Products</a>&nbsp;|
+      <router-link :to="{ name: 'add-review', params: {id: product.id} }">Add Review</a>
     </div>
     <div class="well-display">
       <average-summary />
@@ -31,6 +31,16 @@ export default {
     StarSummary,
     AddReview,
     ReviewList
+  },
+  methods: {
+    addReviewPage(product) {
+      return {
+        name: 'add-review',
+        params: {
+          id: product.id
+        }
+      }
+    }
   },
   computed: {
     product(){
