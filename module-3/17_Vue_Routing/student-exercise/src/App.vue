@@ -1,5 +1,10 @@
 <template>
   <div id="app">
+    <nav>
+      <router-link :to="{ name: 'home' }" >Home</router-link> 
+      {{'home'.includes($route.name)? ' | ' : '' }}
+      <router-link :to="{ name: 'my-books' }" v-if="!'my-books'.includes($route.name)" >My Books</router-link>
+    </nav>
     <router-view />
   </div>
 </template>

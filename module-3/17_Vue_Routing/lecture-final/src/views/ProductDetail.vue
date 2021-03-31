@@ -39,13 +39,6 @@ export default {
       );
     }
   },
-  /*
-  created is a Vue Lifecycle Hook which are explained in greater
-  detail in the JavaScript Web Services topic.
-  For now, it should be enough to understand the code inside the
-  method is executed each time a new instance of ProductDetail
-  is created.
-  */
   created() {
     const activeProductID = this.$route.params.id;
     this.$store.commit("SET_ACTIVE_PRODUCT", activeProductID);
