@@ -105,8 +105,8 @@ export default new Vuex.Store({
     SAVE_BOOK(state, book) {
       state.books.push(book);
     },
-    SET_ACTIVE_BOOK(state, bookId) {
-      state.activeBook = bookId;
+    SET_ACTIVE_BOOK(state, bookISBN) {
+      state.activeBook = bookISBN;
     }
   },
   actions: {},
