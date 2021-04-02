@@ -24,7 +24,13 @@ export default {
   methods: {
     updateTopic() {
       const topic = { id: this.topicID, title: this.title };
-      // call topic service update method
+      topicService.updateTopic(topic).then(response => {
+        if(response.status === 200){
+          this.$router.push('/');
+        }
+      }).catch(error => {
+
+      });
     }
   },
   created() {
